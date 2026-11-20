@@ -1,0 +1,67 @@
+{
+  "numero_pedido": "DIA-2026-0111",
+  "tipo_execucao": "diligencia_preliminar",
+  "modelo": null,
+  "duracao_segundos": null,
+  "status": "diligencia_preliminar_concluida",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0111",
+    "matricula": "206689",
+    "quantidade_diarias": null,
+    "valor_total": null,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Nome e matricula conferidos no cadastro."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "nao_atende",
+        "detalhe": "Campo obrigatorio ausente: data_retorno"
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "nao_verificado",
+        "detalhe": "Analise de merito suspensa ate a regularizacao dos dados preliminares."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "nao_verificado",
+        "detalhe": "Analise de merito suspensa ate a regularizacao dos dados preliminares."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "nao_verificado",
+        "detalhe": "Analise de merito suspensa ate a regularizacao dos dados preliminares."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "nao_verificado",
+        "detalhe": "Analise de merito suspensa ate a regularizacao dos dados preliminares."
+      }
+    ],
+    "recomendacao": "diligencia",
+    "exige_autorizacao_superior": false,
+    "pendencias": [
+      "Campo obrigatorio ausente: data_retorno"
+    ],
+    "alertas": [
+      "Analise de merito nao realizada.",
+      "Nao houve calculo ou autorizacao de diarias.",
+      "A decisao final cabe ao ordenador de despesa."
+    ],
+    "minuta_despacho": "Em analise preliminar do pedido DIA-2026-0111, foram identificadas as seguintes pendencias: Campo obrigatorio ausente: data_retorno. Restituam-se os autos para complementacao ou correcao das informacoes. Apos o saneamento, realize-se nova analise de merito. Esta instrucao nao constitui autorizacao de concessao ou pagamento."
+  },
+  "auditoria_ferramentas": {
+    "chamadas": []
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0111",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Diligencia preliminar validada."
+  },
+  "metricas": null,
+  "aprovado_para_revisao_humana": true
+}

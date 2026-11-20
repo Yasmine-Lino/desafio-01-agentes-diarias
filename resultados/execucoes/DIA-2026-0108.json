@@ -1,0 +1,134 @@
+{
+  "numero_pedido": "DIA-2026-0108",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 9.9105,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0108",
+    "matricula": "203648",
+    "quantidade_diarias": 3.5,
+    "valor_total": 980.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado e compatível: matrícula 203648, servidor Fiscal Ambiental, grupo B, sede em Cuiabá."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados número do pedido, matrícula, datas, destino, transporte e justificativa; não foi identificada divergência cadastral."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "O pedido foi protocolado com 25 dias corridos de antecedência, superando o mínimo de 10 dias previsto no art. 5º."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "nao_atende",
+        "detalhe": "Consta prestação de contas vencida e pendente referente ao pedido DIA-2026-0023. Nos termos do art. 7º, o servidor fica impedido de receber nova diária até a regularização."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "O cálculo oficial apurou 3,5 diárias no mês da partida, dentro do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "O saldo informado para a unidade é suficiente para o valor solicitado de R$ 980,00."
+      }
+    ],
+    "recomendacao": "diligencia",
+    "exige_autorizacao_superior": false,
+    "pendencias": [
+      "Regularizar a prestação de contas vencida do pedido DIA-2026-0023 antes da concessão de nova diária."
+    ],
+    "alertas": [
+      "A instrução não substitui a autorização formal do ordenador de despesa."
+    ],
+    "minuta_despacho": "Encaminhe-se o pedido DIA-2026-0108 ao servidor para diligência, tendo em vista a existência de prestação de contas vencida referente ao pedido DIA-2026-0023, conforme art. 7º da Instrução Normativa SEMA nº 07/2026. Após a regularização, retornem os autos para nova análise. A presente instrução não constitui autorização de pagamento ou concessão de diária, cabendo a decisão ao ordenador de despesa."
+  },
+  "auditoria_ferramentas": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_prestacoes",
+      "verificar_orcamento"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_003bb0885b4fb217006b006ffa205c87d1b05421595e56eb96",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '203648', 'nome': 'Gustavo Henrique Prado', 'cargo': 'Fiscal Ambiental', 'grupo_diaria': 'B', 'unidade': 'CFF', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001F02DAB0230>",
+          "start_time": 1795190778.5388455,
+          "end_time": 1795190778.5396836,
+          "duration": 0.0008380000945180655
+        }
+      },
+      {
+        "tool_call_id": "fc_003bb0885b4fb217006b006ffb2e4487d198a51be29eb267c0",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '203648', 'grupo_diaria': 'B', 'categoria_destino': 'interior_mt', 'data_partida': '2026-11-03', 'data_retorno': '2026-11-06', 'quantidade_diarias': 3.5, 'valor_unitario': 280.0, 'valor_total': 980.0, 'antecedencia_dias': 25, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 3.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001F02DAB11F0>",
+          "start_time": 1795190779.4519413,
+          "end_time": 1795190779.4534175,
+          "duration": 0.0014763998333364725
+        }
+      },
+      {
+        "tool_call_id": "fc_003bb0885b4fb217006b006ffc409c87d18d73b58d84a70b2a",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '203648', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': True, 'pedidos_vencidos': ['DIA-2026-0023'], 'registros': [{'pedido': 'DIA-2026-0011', 'data_partida': '2026-08-04', 'data_retorno': '2026-08-07', 'quantidade': 3.5, 'prestacao_contas': 'entregue', 'prazo_prestacao': '2026-08-14', 'prestacao_vencida': False}, {'pedido': 'DIA-2026-0023', 'data_partida': '2026-09-14', 'data_retorno': '2026-09-18', 'quantidade': 4.5, 'prestacao_contas': 'pendente', 'prazo_prestacao': '2026-09-25', 'prestacao_vencida': True}]}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001F02DAB0200>",
+          "start_time": 1795190780.5779388,
+          "end_time": 1795190780.578945,
+          "duration": 0.0010061999782919884
+        }
+      },
+      {
+        "tool_call_id": "fc_003bb0885b4fb217006b006ffd4d3087d1888c88980218fd3c",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '203648', 'unidade': 'CFF', 'nome_unidade': 'Coordenadoria de Fiscalização de Flora', 'saldo_disponivel': 18400.0, 'valor_solicitado': 980.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 17420.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001F02DAB01D0>",
+          "start_time": 1795190781.643362,
+          "end_time": 1795190781.6515281,
+          "duration": 0.008166099898517132
+        }
+      }
+    ]
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0108",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "metricas": {
+    "input_tokens": 9488,
+    "output_tokens": 578,
+    "total_tokens": 10066,
+    "cache_read_tokens": 8602,
+    "cache_write_tokens": 871,
+    "reasoning_tokens": 0,
+    "cost": null,
+    "duration": 9.90750620001927,
+    "time_to_first_token": 1.834973799996078
+  },
+  "aprovado_para_revisao_humana": true
+}

@@ -1,0 +1,133 @@
+{
+  "numero_pedido": "DIA-2026-0104",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 8.8188,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0104",
+    "matricula": "200941",
+    "quantidade_diarias": 2.5,
+    "valor_total": 1500.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado e compatível com a matrícula informada; servidor do Grupo A, lotado no GAB, com sede em Cuiabá."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados período, destino, transporte e justificativa; não foram considerados dados pessoais sensíveis constantes da justificativa."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "A antecedência calculada é de 38 dias, superior ao mínimo regulamentar de 10 dias corridos."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não foi identificada prestação de contas vencida para a matrícula consultada."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "O total projetado para novembro de 2026 é de 2,5 diárias, dentro do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo suficiente na unidade: R$ 12.000,00 disponíveis para uma solicitação de R$ 1.500,00."
+      }
+    ],
+    "recomendacao": "apto_para_autorizacao",
+    "exige_autorizacao_superior": false,
+    "pendencias": [],
+    "alertas": [
+      "A recomendação é técnica e não substitui a autorização do ordenador de despesa.",
+      "O cálculo oficial considera 2,5 diárias para o período, ao valor unitário de R$ 600,00, conforme Grupo A e destino no Distrito Federal."
+    ],
+    "minuta_despacho": "À consideração do ordenador de despesa. Após as verificações cadastral, documental, de antecedência, prestação de contas, limite mensal e disponibilidade orçamentária, não foram identificados impedimentos objetivos. O pedido DIA-2026-0104 encontra-se tecnicamente apto para autorização, no valor total de R$ 1.500,00, correspondente a 2,5 diárias, sem prejuízo da decisão da autoridade competente."
+  },
+  "auditoria_ferramentas": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_orcamento",
+      "verificar_prestacoes"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_029fd9fb2830fd2b006b00a4911e8887d19b0d1560bf16786f",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '200941', 'nome': 'Heitor Vasconcelos Lima', 'cargo': 'Secretário Adjunto de Gestão Ambiental', 'grupo_diaria': 'A', 'unidade': 'GAB', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x00000268EF536000>",
+          "start_time": 1795204241.5704198,
+          "end_time": 1795204241.571292,
+          "duration": 0.0008721000049263239
+        }
+      },
+      {
+        "tool_call_id": "fc_029fd9fb2830fd2b006b00a49222fc87d199869785b9c4586e",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '200941', 'grupo_diaria': 'A', 'categoria_destino': 'distrito_federal', 'data_partida': '2026-11-16', 'data_retorno': '2026-11-18', 'quantidade_diarias': 2.5, 'valor_unitario': 600.0, 'valor_total': 1500.0, 'antecedencia_dias': 38, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 2.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x00000268EF535FD0>",
+          "start_time": 1795204242.5208483,
+          "end_time": 1795204242.5255227,
+          "duration": 0.00467439997009933
+        }
+      },
+      {
+        "tool_call_id": "fc_029fd9fb2830fd2b006b00a493405087d199b8c09d43ecd63d",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '200941', 'unidade': 'GAB', 'nome_unidade': 'Gabinete do Secretário', 'saldo_disponivel': 12000.0, 'valor_solicitado': 1500.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 10500.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x00000268EF535FA0>",
+          "start_time": 1795204243.5961552,
+          "end_time": 1795204243.5981174,
+          "duration": 0.001962200039997697
+        }
+      },
+      {
+        "tool_call_id": "fc_029fd9fb2830fd2b006b00a4942ec087d19f4bfbb81318fd71",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '200941', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': []}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x00000268EEE88CE0>",
+          "start_time": 1795204244.506685,
+          "end_time": 1795204244.507675,
+          "duration": 0.0009900000877678394
+        }
+      }
+    ]
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0104",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "metricas": {
+    "input_tokens": 10868,
+    "output_tokens": 558,
+    "total_tokens": 11426,
+    "cache_read_tokens": 10109,
+    "cache_write_tokens": 744,
+    "reasoning_tokens": 0,
+    "cost": null,
+    "duration": 8.815705599961802,
+    "time_to_first_token": 1.4687749999575317
+  },
+  "aprovado_para_revisao_humana": true
+}

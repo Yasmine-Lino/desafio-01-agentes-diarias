@@ -1,0 +1,135 @@
+{
+  "numero_pedido": "DIA-2026-0110",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 9.7099,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0110",
+    "matricula": "205507",
+    "quantidade_diarias": 4.5,
+    "valor_total": 1800.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado para a matrícula 205507; cargo Analista de Recursos Hídricos, grupo B, unidade CRH e sede em Cuiabá. Os dados cadastrais informados são compatíveis."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados número do pedido, matrícula, datas, destino, transporte e justificativa; não foi identificada divergência nos dados fornecidos."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "A antecedência calculada é de 32 dias corridos, superior ao mínimo normativo de 10 dias."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não consta prestação de contas vencida para o servidor na consulta realizada."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "Foram calculadas 4,5 diárias para novembro, sem diárias anteriores no mês, dentro do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "nao_atende",
+        "detalhe": "O saldo disponível da unidade é de R$ 640,00, inferior ao valor solicitado de R$ 1.800,00; o saldo projetado após a solicitação seria de R$ -1.160,00."
+      }
+    ],
+    "recomendacao": "nao_recomendado",
+    "exige_autorizacao_superior": false,
+    "pendencias": [
+      "Indicar fonte de saldo suficiente na dotação de diárias da unidade, caso o pedido seja reapresentado."
+    ],
+    "alertas": [
+      "A insuficiência de saldo orçamentário impede a recomendação favorável neste momento.",
+      "A instrução técnica não substitui a decisão do ordenador de despesa."
+    ],
+    "minuta_despacho": "À consideração do ordenador de despesa: a instrução técnica do pedido DIA-2026-0110 identificou cadastro compatível, dados suficientes, antecedência regulamentar atendida, ausência de prestação de contas vencida e respeito ao limite mensal. Contudo, não há saldo suficiente na dotação de diárias da unidade: saldo disponível de R$ 640,00 para despesa estimada de R$ 1.800,00. Recomenda-se não autorizar o pedido neste momento, sem prejuízo de nova análise caso seja demonstrada disponibilidade orçamentária suficiente."
+  },
+  "auditoria_ferramentas": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_prestacoes",
+      "verificar_orcamento"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_04086f9f025da479006b00a4fe398c87d1be06d31910f913eb",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '205507', 'nome': 'Rodrigo Siqueira Campos', 'cargo': 'Analista de Recursos Hídricos', 'grupo_diaria': 'B', 'unidade': 'CRH', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000002567D2A5E50>",
+          "start_time": 1795204350.6690962,
+          "end_time": 1795204350.669953,
+          "duration": 0.0008568000048398972
+        }
+      },
+      {
+        "tool_call_id": "fc_04086f9f025da479006b00a4ff71c087d19226d97877003b93",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '205507', 'grupo_diaria': 'B', 'categoria_destino': 'outra_uf', 'data_partida': '2026-11-10', 'data_retorno': '2026-11-14', 'quantidade_diarias': 4.5, 'valor_unitario': 400.0, 'valor_total': 1800.0, 'antecedencia_dias': 32, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 4.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000002567D2A5E20>",
+          "start_time": 1795204351.8342044,
+          "end_time": 1795204351.8356812,
+          "duration": 0.0014768000692129135
+        }
+      },
+      {
+        "tool_call_id": "fc_04086f9f025da479006b00a5007cb087d199f4eb08a5ea8ee4",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '205507', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': []}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000002567D2A5DF0>",
+          "start_time": 1795204352.983472,
+          "end_time": 1795204352.984457,
+          "duration": 0.000984800048172474
+        }
+      },
+      {
+        "tool_call_id": "fc_04086f9f025da479006b00a501a74487d19b5518d2cf3eaba4",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '205507', 'unidade': 'CRH', 'nome_unidade': 'Coordenadoria de Recursos Hídricos', 'saldo_disponivel': 640.0, 'valor_solicitado': 1800.0, 'saldo_suficiente': False, 'saldo_apos_solicitacao': -1160.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000002567D2A5DC0>",
+          "start_time": 1795204354.0191045,
+          "end_time": 1795204354.0211504,
+          "duration": 0.0020457999780774117
+        }
+      }
+    ]
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0110",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "metricas": {
+    "input_tokens": 10697,
+    "output_tokens": 624,
+    "total_tokens": 11321,
+    "cache_read_tokens": 9970,
+    "cache_write_tokens": 712,
+    "reasoning_tokens": 0,
+    "cost": null,
+    "duration": 9.707140600075945,
+    "time_to_first_token": 1.4717220000457019
+  },
+  "aprovado_para_revisao_humana": true
+}

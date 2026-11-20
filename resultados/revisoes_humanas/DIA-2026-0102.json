@@ -1,0 +1,14 @@
+{
+  "numero_pedido": "DIA-2026-0102",
+  "arquivo_resultado": "DIA-2026-0102.json",
+  "data_registro": "2026-11-20T15:15:33.200795-04:00",
+  "revisor": "REVISOR_TESTE_HOMOLOGACAO",
+  "decisao_humana": "encaminhar_para_autorizacao",
+  "recomendacao_agente": "apto_para_autorizacao",
+  "divergencia": false,
+  "justificativa": "Teste de homologação da revisão humana. Não constitui autorização administrativa real.",
+  "despacho_final": "Instrução: após as verificações de cadastro, completude dos dados, antecedência, prestação de contas, limite mensal e saldo orçamentário, o pedido DIA-2026-0102 mostra-se apto para submissão à decisão do ordenador de despesa. Foram calculadas 3,5 diárias, no valor total de R$ 770,00, conforme grupo C e destino no interior de MT. Submeta-se à autoridade competente, sem que esta instrução implique autorização de pagamento.",
+  "barreira_aprovada": true,
+  "revisao_confirmada": true,
+  "decisao_final_ordenador": false
+}

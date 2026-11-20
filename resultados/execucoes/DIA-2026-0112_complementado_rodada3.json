@@ -1,0 +1,122 @@
+{
+  "numero_pedido": "DIA-2026-0112",
+  "tipo_execucao": "complementacao_com_memoria",
+  "duracao_segundos": 11.404,
+  "status": "runstatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0112",
+    "matricula": "207418",
+    "quantidade_diarias": 3.5,
+    "valor_total": 770.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro oficial localizado e compatível com a matrícula informada: Técnica Ambiental, grupo C, lotada na unidade CUC."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Os dados necessários foram informados, e a matrícula foi confirmada pelo cadastro oficial."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "Pedido protocolado com 46 dias corridos de antecedência, superando o mínimo de 10 dias."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não há prestação de contas vencida registrada para a servidora."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "O pedido totaliza 3,5 diárias; não há diárias anteriores registradas no mês da partida, permanecendo abaixo do limite de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo disponível de R$ 7.800,00 na unidade, superior ao valor solicitado de R$ 770,00."
+      }
+    ],
+    "recomendacao": "apto_para_autorizacao",
+    "exige_autorizacao_superior": false,
+    "pendencias": [],
+    "alertas": [
+      "A instrução não substitui a autorização formal do ordenador de despesa, a quem cabe a decisão final."
+    ],
+    "minuta_despacho": "Após as verificações cadastral, documental, temporal, de prestação de contas, limite mensal e saldo orçamentário, conclui-se que o pedido DIA-2026-0112 atende aos requisitos analisados. O deslocamento para Alta Floresta/MT, de 24/11/2026 a 27/11/2026, corresponde a 3,5 diárias, no valor total de R$ 770,00. Encaminhe-se ao ordenador de despesa para decisão quanto ao deferimento ou indeferimento."
+  },
+  "auditoria": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_orcamento",
+      "verificar_prestacoes"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_0dfff3cf5fc997d9006b00a70a39dc87d1bb36399736d717cd",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '207418', 'nome': 'Carla Regina Souza', 'cargo': 'Técnica Ambiental', 'grupo_diaria': 'C', 'unidade': 'CUC', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000014CA76C99D0>",
+          "start_time": 1795204874.7125356,
+          "end_time": 1795204874.7134645,
+          "duration": 0.0009289002045989037
+        }
+      },
+      {
+        "tool_call_id": "fc_0dfff3cf5fc997d9006b00a70b8a9887d1b21e17d0f6bd5935",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '207418', 'grupo_diaria': 'C', 'categoria_destino': 'interior_mt', 'data_partida': '2026-11-24', 'data_retorno': '2026-11-27', 'quantidade_diarias': 3.5, 'valor_unitario': 220.0, 'valor_total': 770.0, 'antecedencia_dias': 46, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 3.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000014CA7739BB0>",
+          "start_time": 1795204875.8821466,
+          "end_time": 1795204875.8870697,
+          "duration": 0.00492309988476336
+        }
+      },
+      {
+        "tool_call_id": "fc_0dfff3cf5fc997d9006b00a70c928087d18b8fdf8d355f3c55",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '207418', 'unidade': 'CUC', 'nome_unidade': 'Coordenadoria de Unidades de Conservação', 'saldo_disponivel': 7800.0, 'valor_solicitado': 770.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 7030.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000014CA70F5E50>",
+          "start_time": 1795204876.950734,
+          "end_time": 1795204876.952881,
+          "duration": 0.0021472000516951084
+        }
+      },
+      {
+        "tool_call_id": "fc_0dfff3cf5fc997d9006b00a70d8ba087d19c3795628d8f6ecd",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '207418', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': []}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000014CA7699BE0>",
+          "start_time": 1795204877.8819437,
+          "end_time": 1795204877.88277,
+          "duration": 0.0008263001218438148
+        }
+      }
+    ]
+  },
+  "validacao": {
+    "numero_pedido": "DIA-2026-0112",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "historico_preservado": true,
+  "usuario_preservado": true
+}

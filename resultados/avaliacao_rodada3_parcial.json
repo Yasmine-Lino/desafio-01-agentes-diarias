@@ -1,0 +1,75 @@
+{
+  "tipo": "terceira_rodada_parcial",
+  "escopo": "quatro casos de regressao",
+  "total_casos_previstos": 14,
+  "casos_executados_neste_resumo": 4,
+  "casos_aprovados_na_barreira": 4,
+  "tempo_medio_segundos": 10.4729,
+  "tokens_totais": 45997,
+  "registros": [
+    {
+      "numero_pedido": "DIA-2026-0105",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0105_rodada3.json",
+      "recomendacao": "nao_recomendado",
+      "quantidade_diarias": 2.5,
+      "valor_total": 700.0,
+      "criterios_nao_atendidos": [
+        "antecedencia"
+      ],
+      "duracao_segundos": 11.4196,
+      "input_tokens": 10687,
+      "output_tokens": 583,
+      "total_tokens": 11270,
+      "total_chamadas_ferramentas": 4,
+      "barreira_aprovada": true
+    },
+    {
+      "numero_pedido": "DIA-2026-0107",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0107_rodada3.json",
+      "recomendacao": "nao_recomendado",
+      "quantidade_diarias": 2.5,
+      "valor_total": 550.0,
+      "criterios_nao_atendidos": [
+        "antecedencia"
+      ],
+      "duracao_segundos": 9.8429,
+      "input_tokens": 10933,
+      "output_tokens": 618,
+      "total_tokens": 11551,
+      "total_chamadas_ferramentas": 4,
+      "barreira_aprovada": true
+    },
+    {
+      "numero_pedido": "DIA-2026-0108",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0108_rodada3.json",
+      "recomendacao": "nao_recomendado",
+      "quantidade_diarias": 3.5,
+      "valor_total": 980.0,
+      "criterios_nao_atendidos": [
+        "prestacao_contas"
+      ],
+      "duracao_segundos": 10.3256,
+      "input_tokens": 10978,
+      "output_tokens": 636,
+      "total_tokens": 11614,
+      "total_chamadas_ferramentas": 4,
+      "barreira_aprovada": true
+    },
+    {
+      "numero_pedido": "DIA-2026-0109",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0109_rodada3.json",
+      "recomendacao": "nao_recomendado",
+      "quantidade_diarias": 3.5,
+      "valor_total": 980.0,
+      "criterios_nao_atendidos": [
+        "limite_mensal"
+      ],
+      "duracao_segundos": 10.3035,
+      "input_tokens": 10972,
+      "output_tokens": 590,
+      "total_tokens": 11562,
+      "total_chamadas_ferramentas": 4,
+      "barreira_aprovada": true
+    }
+  ]
+}

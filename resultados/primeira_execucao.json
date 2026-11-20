@@ -1,0 +1,51 @@
+{
+  "numero_pedido": "DIA-2026-0101",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 12.0391,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0101",
+    "matricula": "204317",
+    "quantidade_diarias": 3.5,
+    "valor_total": 980.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado para a matrícula 204317, com cargo de Fiscal Ambiental, grupo de diária B e unidade CFF."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados número do pedido, matrícula, datas, destino, transporte e justificativa; os dados apresentados são compatíveis com o cadastro consultado."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "A antecedência calculada é de 31 dias corridos, superior ao mínimo normativo de 10 dias."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não foi identificada prestação de contas vencida para o servidor."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "O total projetado para novembro de 2026 é de 3,5 diárias, dentro do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo suficiente na unidade CFF: R$ 18.400,00 disponíveis para uma solicitação de R$ 980,00."
+      }
+    ],
+    "recomendacao": "apto_para_autorizacao",
+    "exige_autorizacao_superior": false,
+    "pendencias": [],
+    "alertas": [
+      "A instrução não substitui a autorização formal do ordenador de despesa."
+    ],
+    "minuta_despacho": "Após a análise dos requisitos previstos na Instrução Normativa SEMA nº 07/2026, verificou-se que o pedido DIA-2026-0101 atende aos critérios de cadastro, completude dos dados, antecedência mínima, prestação de contas, limite mensal e disponibilidade orçamentária. Registra-se que a presente instrução constitui recomendação para revisão humana e não substitui a decisão do ordenador de despesa, a quem compete deferir ou indeferir o pedido."
+  }
+}

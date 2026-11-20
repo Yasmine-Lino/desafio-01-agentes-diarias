@@ -1,0 +1,132 @@
+{
+  "numero_pedido": "DIA-2026-0103",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 10.4191,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0103",
+    "matricula": "203156",
+    "quantidade_diarias": 0.5,
+    "valor_total": 140.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado para a matrícula 203156; cargo de Analista de Meio Ambiente, grupo B, lotação na unidade CUC e sede em Cuiabá. Os dados funcionais são compatíveis com o pedido."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados número do pedido, matrícula, datas, destino, transporte e justificativa suficientes para a análise técnica."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "A antecedência calculada é de 27 dias corridos, superior ao mínimo normativo de 10 dias."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não há prestação de contas vencida registrada para a matrícula na consulta realizada."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "O deslocamento sem pernoite corresponde a 0,5 diária. O total projetado para novembro de 2026 é de 0,5 diária, dentro do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo suficiente na unidade CUC: R$ 7.800,00 disponíveis para uma despesa solicitada de R$ 140,00."
+      }
+    ],
+    "recomendacao": "apto_para_autorizacao",
+    "exige_autorizacao_superior": false,
+    "pendencias": [],
+    "alertas": [
+      "A recomendação é exclusivamente técnica e não substitui a autorização do ordenador de despesa."
+    ],
+    "minuta_despacho": "Instrução técnica: o pedido DIA-2026-0103 atende aos critérios cadastrais, de completude, antecedência, prestação de contas, limite mensal e saldo orçamentário verificados. Para deslocamento sem pernoite, foram calculadas 0,5 diária, no valor total de R$ 140,00. Encaminhe-se ao ordenador de despesa para decisão, nos termos do art. 10 da IN SEMA nº 07/2026."
+  },
+  "auditoria_ferramentas": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_orcamento",
+      "verificar_prestacoes"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_07c34523d3e910be006b00a4692ae487d197c1467f582c0af6",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '203156', 'nome': 'Juliana Campos Arruda', 'cargo': 'Analista de Meio Ambiente', 'grupo_diaria': 'B', 'unidade': 'CUC', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001C9F2075E50>",
+          "start_time": 1795204201.7220273,
+          "end_time": 1795204201.722883,
+          "duration": 0.0008555999957025051
+        }
+      },
+      {
+        "tool_call_id": "fc_07c34523d3e910be006b00a46a5b1887d1adc6df3cbcf0b748",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '203156', 'grupo_diaria': 'B', 'categoria_destino': 'interior_mt', 'data_partida': '2026-11-05', 'data_retorno': '2026-11-05', 'quantidade_diarias': 0.5, 'valor_unitario': 280.0, 'valor_total': 140.0, 'antecedencia_dias': 27, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 0.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001C9F2075E20>",
+          "start_time": 1795204202.852182,
+          "end_time": 1795204202.8569672,
+          "duration": 0.004785200115293264
+        }
+      },
+      {
+        "tool_call_id": "fc_07c34523d3e910be006b00a46bba0c87d1be3f60f084c4eb7c",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '203156', 'unidade': 'CUC', 'nome_unidade': 'Coordenadoria de Unidades de Conservação', 'saldo_disponivel': 7800.0, 'valor_solicitado': 140.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 7660.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001C9F1F3BA70>",
+          "start_time": 1795204204.1074753,
+          "end_time": 1795204204.1095085,
+          "duration": 0.0020332999993115664
+        }
+      },
+      {
+        "tool_call_id": "fc_07c34523d3e910be006b00a46cd04887d18364ae7ba67be48a",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '203156', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': []}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001C9EF08DDF0>",
+          "start_time": 1795204205.2022688,
+          "end_time": 1795204205.203162,
+          "duration": 0.000893099932000041
+        }
+      }
+    ]
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0103",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "metricas": {
+    "input_tokens": 10684,
+    "output_tokens": 563,
+    "total_tokens": 11247,
+    "cache_read_tokens": 9962,
+    "cache_write_tokens": 707,
+    "reasoning_tokens": 0,
+    "cost": null,
+    "duration": 10.416293600108474,
+    "time_to_first_token": 2.54301970009692
+  },
+  "aprovado_para_revisao_humana": true
+}

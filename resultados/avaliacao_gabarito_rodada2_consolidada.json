@@ -1,0 +1,518 @@
+{
+  "total_casos": 14,
+  "casos_disponiveis": 14,
+  "casos_integralmente_corretos": 12,
+  "acuracia_integral_percentual": 85.71,
+  "campos_corretos": 67,
+  "campos_avaliados": 70,
+  "acuracia_por_campo_percentual": 95.71,
+  "resultados": [
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0101",
+      "arquivo": "resultados\\primeira_execucao.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "apto_para_autorizacao",
+          "obtido": "apto_para_autorizacao",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 3.5,
+          "obtido": 3.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 980.0,
+          "obtido": 980.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [],
+          "obtido": [],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0102",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0102.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "apto_para_autorizacao",
+          "obtido": "apto_para_autorizacao",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 3.5,
+          "obtido": 3.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 770.0,
+          "obtido": 770.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [],
+          "obtido": [],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0103",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0103.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "apto_para_autorizacao",
+          "obtido": "apto_para_autorizacao",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 0.5,
+          "obtido": 0.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 140.0,
+          "obtido": 140.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [],
+          "obtido": [],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0104",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0104.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "apto_para_autorizacao",
+          "obtido": "apto_para_autorizacao",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 2.5,
+          "obtido": 2.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 1500.0,
+          "obtido": 1500.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [],
+          "obtido": [],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0105",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0105_rodada2_v2.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "nao_recomendado",
+          "obtido": "nao_recomendado",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 2.5,
+          "obtido": 2.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 700.0,
+          "obtido": 700.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [
+            "antecedencia"
+          ],
+          "obtido": [
+            "antecedencia"
+          ],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0106",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0106.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "apto_para_autorizacao",
+          "obtido": "diligencia",
+          "correto": false
+        },
+        "quantidade_diarias": {
+          "esperado": 4.5,
+          "obtido": 4.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 1260.0,
+          "obtido": 1260.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": true,
+          "obtido": true,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [],
+          "obtido": [
+            "antecedencia"
+          ],
+          "correto": false
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0107",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0107_rodada2_v2.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "nao_recomendado",
+          "obtido": "nao_recomendado",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 2.5,
+          "obtido": 2.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 550.0,
+          "obtido": 550.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [
+            "antecedencia"
+          ],
+          "obtido": [
+            "antecedencia"
+          ],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0108",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0108_rodada2_v2.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "nao_recomendado",
+          "obtido": "nao_recomendado",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 3.5,
+          "obtido": 3.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 980.0,
+          "obtido": 980.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [
+            "prestacao_contas"
+          ],
+          "obtido": [
+            "prestacao_contas"
+          ],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0109",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0109_rodada2_v2.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "nao_recomendado",
+          "obtido": "nao_recomendado",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 3.5,
+          "obtido": 3.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 980.0,
+          "obtido": 980.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [
+            "limite_mensal"
+          ],
+          "obtido": [
+            "limite_mensal"
+          ],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0110",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0110.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "nao_recomendado",
+          "obtido": "nao_recomendado",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 4.5,
+          "obtido": 4.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 1800.0,
+          "obtido": 1800.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [
+            "saldo_orcamentario"
+          ],
+          "obtido": [
+            "saldo_orcamentario"
+          ],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0111",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0111.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "diligencia",
+          "obtido": "diligencia",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": null,
+          "obtido": null,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": null,
+          "obtido": null,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [
+            "dados_completos"
+          ],
+          "obtido": [
+            "dados_completos"
+          ],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "pedidos",
+      "numero": "DIA-2026-0112",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0112.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "diligencia",
+          "obtido": "diligencia",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": null,
+          "obtido": null,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": null,
+          "obtido": null,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [
+            "cadastro"
+          ],
+          "obtido": [
+            "cadastro",
+            "dados_completos"
+          ],
+          "correto": false
+        }
+      }
+    },
+    {
+      "grupo": "complementacoes",
+      "numero": "DIA-2026-0111",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0111_complementado_v2.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "apto_para_autorizacao",
+          "obtido": "apto_para_autorizacao",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 3.5,
+          "obtido": 3.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 980.0,
+          "obtido": 980.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [],
+          "obtido": [],
+          "correto": true
+        }
+      }
+    },
+    {
+      "grupo": "complementacoes",
+      "numero": "DIA-2026-0112",
+      "arquivo": "resultados\\execucoes\\DIA-2026-0112_complementado.json",
+      "disponivel": true,
+      "aprovado": true,
+      "comparacoes": {
+        "recomendacao": {
+          "esperado": "apto_para_autorizacao",
+          "obtido": "apto_para_autorizacao",
+          "correto": true
+        },
+        "quantidade_diarias": {
+          "esperado": 3.5,
+          "obtido": 3.5,
+          "correto": true
+        },
+        "valor_total": {
+          "esperado": 770.0,
+          "obtido": 770.0,
+          "correto": true
+        },
+        "exige_autorizacao_superior": {
+          "esperado": false,
+          "obtido": false,
+          "correto": true
+        },
+        "criterios_nao_atendidos": {
+          "esperado": [],
+          "obtido": [],
+          "correto": true
+        }
+      }
+    }
+  ]
+}
