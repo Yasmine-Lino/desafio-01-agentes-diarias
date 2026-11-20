@@ -1,44 +1,50 @@
 # LEIA-ME - Desafio 1 IA - Agentes
 
-**Autora:** Yasmine Lino Franco
-**Curso:** FIC - DEV
-**Modalidade:** Individual
-**Projeto:** Instru??o de Pedidos de Di?rias com Agno
+**Projeto:** Instrução de Pedidos de Diárias com Agno
 
-## 1. Apresenta??o da entrega
+## 1. Autoria
 
-Este projeto implementa um agente de intelig?ncia artificial
-para auxiliar a instru??o de pedidos de di?rias, utilizando
-dados hipot?ticos, ferramentas determin?sticas, regras normativas,
-mem?ria e confer?ncia humana.
-
-O agente n?o substitui a decis?o administrativa.
-
-A documenta??o principal est? em README.md.
-
-## 2. Arquivos principais
-
-| Arquivo ou pasta | Conte?do |
+| Campo | Informação |
 |---|---|
-| README.md | Apresenta??o e instru??es de execu??o |
-| desenho.md | Processo, PEAS, estimativas e autonomia |
-| relatorio.md | Testes, medi??es, diverg?ncias e conclus?es |
-| agente.py | Configura??o do agente Agno |
-| ferramentas.py | Consultas e c?lculos |
-| modelos.py | Estrutura Pydantic |
-| barreira_validacao.py | Verifica??es independentes |
-| app.py | Interface Streamlit |
-| dados/ | Dados hipot?ticos |
-| avaliacao/gabarito.json | Refer?ncia para avalia??o externa |
-| testes/ | Scripts de testes |
-| resultados/ | Evid?ncias das execu??es |
+| Autora | Yasmine Lino Franco |
+| Curso | FIC - DEV |
+| Atividade | Desafio 1 IA - Agentes |
+| Modalidade | Projeto individual |
 
-## 3. Prepara??o
+## 2. Apresentação da entrega
+
+Este projeto implementa um agente de inteligência artificial
+para auxiliar a instrução de pedidos de diárias, utilizando
+dados hipotéticos, ferramentas determinísticas, regras normativas,
+memória e conferência humana.
+
+O agente não substitui a decisão administrativa.
+
+A documentação principal está em README.md.
+
+## 3. Arquivos principais
+
+| Arquivo ou pasta | Conteúdo |
+|---|---|
+| README.md | Apresentação e instruções de execução |
+| desenho.md | Processo, PEAS, estimativas e autonomia |
+| relatorio.md | Testes, medições, divergências e conclusões |
+| agente.py | Configuração do agente Agno |
+| ferramentas.py | Consultas e cálculos |
+| modelos.py | Estrutura Pydantic |
+| barreira_validacao.py | Verificações independentes |
+| app.py | Interface Streamlit |
+| dados/ | Dados hipotéticos |
+| avaliacao/gabarito.json | Referência para avaliação externa |
+| testes/ | Scripts de testes |
+| resultados/ | Evidências das execuções |
+
+## 4. Preparação
 
 Requisitos:
 
 - Python 3.10 ou superior.
-- Chave de API OpenAI para execu??es com modelo.
+- Chave de API OpenAI para execuções com modelo.
 - PowerShell para os comandos apresentados.
 
 Na raiz do projeto:
@@ -48,57 +54,57 @@ Na raiz do projeto:
     .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
 Crie o arquivo .env com base em .env.example e configure
-OPENAI_API_KEY com sua pr?pria chave.
+OPENAI_API_KEY com sua própria chave.
 
-N?o publique credenciais.
+Não publique credenciais.
 
-## 4. Demonstra??o ao professor
+## 5. Demonstração ao professor
 
-### 4.1 Testar as ferramentas sem API
+### 5.1 Testar as ferramentas sem API
 
     .\.venv\Scripts\python.exe testes/testar_ferramentas.py
 
-Resultado observado na ?ltima execu??o:
+Resultado observado na última execução:
 
 - Cadastro: 4/4.
-- Hist?rico: 3/3.
-- C?lculo: 2/2.
-- Or?amento: 2/2.
+- Histórico: 3/3.
+- Cálculo: 2/2.
+- Orçamento: 2/2.
 - Total: 11/11 testes aprovados.
 
-### 4.2 Executar um pedido com o agente
+### 5.2 Executar um pedido com o agente
 
     .\.venv\Scripts\python.exe testes/executar_pedido.py DIA-2026-0102
 
-Essa execu??o utiliza a API OpenAI e pode gerar custo.
+Essa execução utiliza a API OpenAI e pode gerar custo.
 
-### 4.3 Executar a interface
+### 5.3 Executar a interface
 
     .\.venv\Scripts\python.exe -m streamlit run app.py
 
-A interface permite visualizar a instru??o, conferir as
-verifica??es e fundamentos, editar a minuta e registrar
-a decis?o humana.
+A interface permite visualizar a instrução, conferir as
+verificações e fundamentos, editar a minuta e registrar
+a decisão humana.
 
-## 5. Resultados principais
+## 6. Resultados principais
 
-Foram avaliados 12 pedidos e duas complementa??es.
+Foram avaliados 12 pedidos e duas complementações.
 
 | Indicador | Resultado |
 |---|---:|
 | Casos coincidentes com o gabarito na rodada inicial | 8/14 |
 | Casos coincidentes com o gabarito na rodada final | 13/14 |
 | Campos coincidentes com o gabarito | 68/70 |
-| Execu??es aprovadas pela barreira na terceira rodada | 14/14 |
-| Verifica??es de falhas controladas | 22/22 |
+| Execuções aprovadas pela barreira na terceira rodada | 14/14 |
+| Verificações de falhas controladas | 22/22 |
 
-A diverg?ncia do pedido DIA-2026-0106 foi preservada e
+A divergência do pedido DIA-2026-0106 foi preservada e
 explicada em resultados/ANALISE_DIVERGENCIA_0106.md.
 
-A aprova??o da barreira n?o equivale ? coincid?ncia
+A aprovação da barreira não equivale à coincidência
 integral com o gabarito.
 
-## 6. Evid?ncias complementares
+## 7. Evidências complementares
 
 - resultados/avaliacao_gabarito_rodada_inicial.json
 - resultados/avaliacao_gabarito_rodada2_final.json
@@ -107,54 +113,46 @@ integral com o gabarito.
 - resultados/experimento_paralelismo/RELATORIO_COMPARATIVO.md
 - resultados/ANALISE_DIVERGENCIA_0106.md
 
-Os resultados s?o referentes ?s execu??es registradas
-e n?o representam garantia de desempenho futuro.
+Os resultados são referentes às execuções registradas
+e não representam garantia de desempenho futuro.
 
-## 7. Mem?ria e privacidade
+## 8. Memória e privacidade
 
-O projeto inclui experimentos com e sem mem?ria persistente,
-al?m de testes de elimina??o de sess?es, execu??es e mem?rias.
+O projeto inclui experimentos com e sem memória persistente,
+além de testes de eliminação de sessões, execuções e memórias.
 
-Os bancos SQLite locais n?o s?o enviados ao GitHub.
+Os bancos SQLite locais não são enviados ao GitHub.
 
-A confer?ncia humana permanece obrigat?ria.
+A conferência humana permanece obrigatória.
 
-## 8. GitHub e ZIP acad?mico
+## 9. GitHub e ZIP acadêmico
 
-O reposit?rio GitHub ? destinado ao c?digo, aos dados
-hipot?ticos necess?rios, ? documenta??o e ?s evid?ncias
+O repositório GitHub é destinado ao código, aos dados
+hipotéticos necessários, à documentação e às evidências
 revisadas.
 
-O ZIP acad?mico final ser? montado a partir da pasta
-local completa do projeto e dever? incluir os documentos
+O ZIP acadêmico final será montado a partir da pasta
+local completa do projeto e deverá incluir os documentos
 oficiais e exemplos originais do professor, preservados em
 material_professor/.
 
-O ZIP n?o dever? conter:
+O ZIP não deverá conter:
 
 - Arquivo .env com credenciais.
 - Ambientes virtuais.
 - Chaves de API.
-- Caches e arquivos tempor?rios.
+- Caches e arquivos temporários.
 
-Os bancos e registros locais ser?o revisados antes da
+Os bancos e registros locais serão revisados antes da
 montagem do pacote final.
 
-## 9. Limita??es e responsabilidade
+## 10. Limitações e responsabilidade
 
-O sistema auxilia a instru??o administrativa, mas n?o
+O sistema auxilia a instrução administrativa, mas não
 autoriza pagamentos.
 
-As medi??es s?o espec?ficas do exerc?cio. A diverg?ncia
+As medições são específicas do exercício. A divergência
 do pedido DIA-2026-0106 permanece documentada.
 
-O uso em ambiente real exigiria revis?o normativa,
-prote??o adicional de dados e valida??o institucional.
-
-## 10. Autoria
-
-**Yasmine Lino Franco**
-**FIC - DEV**
-**Desafio 1 IA - Agentes**
-
-Projeto acad?mico individual.
+O uso em ambiente real exigiria revisão normativa,
+proteção adicional de dados e validação institucional.

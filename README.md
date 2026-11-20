@@ -1,34 +1,40 @@
 # Desafio 1 IA - Agentes
 
-**Projeto:** Instru??o de Pedidos de Di?rias com Agentes de IA
-**Autora:** Yasmine Lino Franco
-**Curso:** FIC - DEV
-**Modalidade:** Individual
+**Projeto:** Instrução de Pedidos de Diárias com Agno
 
-## 1. Apresenta??o
+## 1. Autoria
 
-Projeto acad?mico que utiliza o framework Agno para auxiliar a
-instru??o de pedidos de di?rias com base em regras normativas,
-consultas a dados hipot?ticos e confer?ncia humana.
+| Campo | Informação |
+|---|---|
+| Autora | Yasmine Lino Franco |
+| Curso | FIC - DEV |
+| Atividade | Desafio 1 IA - Agentes |
+| Modalidade | Projeto individual |
 
-O agente produz uma instru??o estruturada com verifica??es,
-quantidade e valor das di?rias, recomenda??o e minuta de despacho.
+## 2. Apresentação
 
-A decis?o final pertence ao ordenador de despesa.
+Projeto acadêmico que utiliza o framework Agno para auxiliar a
+instrução de pedidos de diárias com base em regras normativas,
+consultas a dados hipotéticos e conferência humana.
 
-## 2. Objetivos
+O agente produz uma instrução estruturada com verificações,
+quantidade e valor das diárias, recomendação e minuta de despacho.
+
+A decisão final pertence ao ordenador de despesa.
+
+## 3. Objetivos
 
 - Modelar o processo administrativo com o quadro PEAS.
-- Implementar quatro ferramentas de consulta e c?lculo.
-- Produzir sa?da estruturada com Pydantic.
-- Configurar limites de execu??o e prote??o de dados pessoais.
-- Aplicar barreira independente de valida??o.
-- Implementar mem?ria persistente e rotina de elimina??o.
+- Implementar quatro ferramentas de consulta e cálculo.
+- Produzir saída estruturada com Pydantic.
+- Configurar limites de execução e proteção de dados pessoais.
+- Aplicar barreira independente de validação.
+- Implementar memória persistente e rotina de eliminação.
 - Comparar os resultados com um gabarito externo.
-- Medir tempo, tokens e comportamento em situa??es de falha.
-- Disponibilizar interface Streamlit para confer?ncia humana.
+- Medir tempo, tokens e comportamento em situações de falha.
+- Disponibilizar interface Streamlit para conferência humana.
 
-## 3. Tecnologias
+## 4. Tecnologias
 
 - Python
 - Agno
@@ -38,89 +44,89 @@ A decis?o final pertence ao ordenador de despesa.
 - SQLite
 - python-dotenv
 
-As vers?es utilizadas est?o em requirements.txt.
+As versões utilizadas estão em requirements.txt.
 
-## 4. Funcionamento
+## 5. Funcionamento
 
-O sistema recebe um pedido de di?rias e consulta quatro ferramentas:
+O sistema recebe um pedido de diárias e consulta quatro ferramentas:
 
-1. Verifica??o do cadastro do servidor.
-2. C?lculo da quantidade e do valor das di?rias.
-3. Verifica??o de hist?rico e presta??es de contas.
-4. Verifica??o de disponibilidade or?ament?ria.
+1. Verificação do cadastro do servidor.
+2. Cálculo da quantidade e do valor das diárias.
+3. Verificação de histórico e prestações de contas.
+4. Verificação de disponibilidade orçamentária.
 
 O agente utiliza dados fornecidos pelo pedido e pelas ferramentas,
-sem autoriza??o para inventar valores ou informa??es cadastrais.
+sem autorização para inventar valores ou informações cadastrais.
 
-A resposta ? organizada em um modelo Pydantic. Antes de ser exibida
-ao conferente, uma barreira em c?digo verifica sua consist?ncia.
+A resposta é organizada em um modelo Pydantic. Antes de ser exibida
+ao conferente, uma barreira em código verifica sua consistência.
 
-A aplica??o tamb?m permite tratar dilig?ncias e complementa??es,
-utilizando sess?es e mem?ria persistente quando configuradas.
+A aplicação também permite tratar diligências e complementações,
+utilizando sessões e memória persistente quando configuradas.
 
-## 5. Arquitetura e arquivos
+## 6. Arquitetura e arquivos
 
 | Arquivo ou pasta | Finalidade |
 |---|---|
-| agente.py | Configura??o do agente Agno |
-| ferramentas.py | Consultas e c?lculos determin?sticos |
-| modelos.py | Contrato de sa?da estruturada |
-| barreira_validacao.py | Valida??o independente |
-| seguranca.py | Prote??o de dados pessoais |
-| persistencia_sessoes.py | Gest?o e persist?ncia de sess?es |
-| validacao_normativa.py | Verifica??es normativas |
-| validacao_recomendacao.py | Confer?ncia das recomenda??es |
-| complementacoes.py | Tratamento de complementa??es |
+| agente.py | Configuração do agente Agno |
+| ferramentas.py | Consultas e cálculos determinísticos |
+| modelos.py | Contrato de saída estruturada |
+| barreira_validacao.py | Validação independente |
+| seguranca.py | Proteção de dados pessoais |
+| persistencia_sessoes.py | Gestão e persistência de sessões |
+| validacao_normativa.py | Verificações normativas |
+| validacao_recomendacao.py | Conferência das recomendações |
+| complementacoes.py | Tratamento de complementações |
 | app.py | Interface Streamlit |
-| dados/ | Acervo hipot?tico do exerc?cio |
-| avaliacao/ | Gabarito externo de avalia??o |
+| dados/ | Acervo hipotético do exercício |
+| avaliacao/ | Gabarito externo de avaliação |
 | testes/ | Testes e experimentos |
-| resultados/ | Evid?ncias das execu??es |
+| resultados/ | Evidências das execuções |
 | desenho.md | Processo, PEAS e estimativas |
-| relatorio.md | Medi??es, falhas e conclus?es |
+| relatorio.md | Medições, falhas e conclusões |
 
-O gabarito ? usado para avalia??o externa e n?o deve ser fornecido
-ao agente durante a gera??o das instru??es.
+O gabarito é usado para avaliação externa e não deve ser fornecido
+ao agente durante a geração das instruções.
 
-## 6. Prepara??o do ambiente
+## 7. Preparação do ambiente
 
 Requisitos:
 
 - Windows com PowerShell, para os comandos abaixo.
 - Python 3.10 ou superior.
-- Acesso ? API OpenAI.
-- Acervo hipot?tico presente na pasta dados/.
+- Acesso à API OpenAI.
+- Acervo hipotético presente na pasta dados/.
 
 Na raiz do projeto, crie o ambiente virtual:
 
     py -m venv .venv
 
-Instale as depend?ncias:
+Instale as dependências:
 
     .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
-Crie o arquivo .env com base no .env.example e configure a vari?vel
-OPENAI_API_KEY com sua pr?pria chave.
+Crie o arquivo .env com base no .env.example e configure a variável
+OPENAI_API_KEY com sua própria chave.
 
-O arquivo .env cont?m credenciais locais e n?o deve ser publicado.
+O arquivo .env contém credenciais locais e não deve ser publicado.
 
-## 7. Executar o sistema
+## 8. Executar o sistema
 
 Para abrir a interface Streamlit:
 
     .\.venv\Scripts\python.exe -m streamlit run app.py
 
-Para executar o m?dulo de configura??o do agente:
+Para executar o módulo de configuração do agente:
 
     .\.venv\Scripts\python.exe agente.py
 
-A aplica??o utiliza os dados do exerc?cio presentes em dados/.
+A aplicação utiliza os dados do exercício presentes em dados/.
 
-Chamadas reais ao modelo podem consumir cr?ditos da API.
+Chamadas reais ao modelo podem consumir créditos da API.
 
-## 8. Executar testes
+## 9. Executar testes
 
-Teste determin?stico das ferramentas:
+Teste determinístico das ferramentas:
 
     .\.venv\Scripts\python.exe testes/testar_ferramentas.py
 
@@ -128,129 +134,119 @@ Teste de um pedido com chamada ao modelo:
 
     .\.venv\Scripts\python.exe testes/executar_pedido.py DIA-2026-0102
 
-Execu??o da terceira rodada para um pedido:
+Execução da terceira rodada para um pedido:
 
     .\.venv\Scripts\python.exe testes/executar_rodada3.py DIA-2026-0102
 
-Outros scripts est?o dispon?veis em testes/, incluindo experimentos
-de mem?ria, paralelismo e complementa??es.
+Outros scripts estão disponíveis em testes/, incluindo experimentos
+de memória, paralelismo e complementações.
 
-## 9. Avalia??o dos resultados
+## 10. Avaliação dos resultados
 
-Foram avaliados 12 pedidos e duas complementa??es, totalizando
+Foram avaliados 12 pedidos e duas complementações, totalizando
 14 casos.
 
 | Indicador | Resultado |
 |---|---:|
-| Coincid?ncia integral inicial com o gabarito | 8/14 (57,14%) |
-| Coincid?ncia integral final com o gabarito | 13/14 (92,86%) |
-| Coincid?ncia dos campos avaliados | 68/70 (97,14%) |
-| Aprova??o da barreira t?cnica na terceira rodada | 14/14 |
-| Verifica??es de falhas controladas | 22/22 |
+| Coincidência integral inicial com o gabarito | 8/14 (57,14%) |
+| Coincidência integral final com o gabarito | 13/14 (92,86%) |
+| Coincidência dos campos avaliados | 68/70 (97,14%) |
+| Aprovação da barreira técnica na terceira rodada | 14/14 |
+| Verificações de falhas controladas | 22/22 |
 
-A aprova??o pela barreira t?cnica n?o significa coincid?ncia
+A aprovação pela barreira técnica não significa coincidência
 integral com o gabarito.
 
-O pedido DIA-2026-0106 apresentou diverg?ncia de recomenda??o,
-relacionada ? interpreta??o da urg?ncia e ? necessidade de
-autoriza??o escrita.
+O pedido DIA-2026-0106 apresentou divergência de recomendação,
+relacionada à interpretação da urgência e à necessidade de
+autorização escrita.
 
-Essa diverg?ncia foi preservada e documentada em
+Essa divergência foi preservada e documentada em
 resultados/ANALISE_DIVERGENCIA_0106.md.
 
-## 10. Experimentos adicionais
+## 11. Experimentos adicionais
 
-### Mem?ria
+### Memória
 
-Foram comparadas tr?s configura??es:
+Foram comparadas três configurações:
 
-- A: sem mem?ria persistente.
-- B: com hist?rico de sess?o.
-- C: com hist?rico e mem?ria do usu?rio.
+- A: sem memória persistente.
+- B: com histórico de sessão.
+- C: com histórico e memória do usuário.
 
-As seis execu??es do experimento foram conclu?das e aprovadas
-pela barreira t?cnica.
+As seis execuções do experimento foram concluídas e aprovadas
+pela barreira técnica.
 
-Evid?ncia:
+Evidência:
 resultados/experimentos_memoria/comparacoes/resumo_comparativo.json
 
 ### Paralelismo
 
-Foi realizada uma compara??o entre execu??o sequencial e
-configura??o com chamadas paralelas.
+Foi realizada uma comparação entre execução sequencial e
+configuração com chamadas paralelas.
 
 Tempo observado:
 
 - Sequencial: 10,937 segundos.
 - Paralelo habilitado: 6,622 segundos.
 
-A redu??o observada foi de aproximadamente 39,45% no tempo
-da execu??o analisada.
+A redução observada foi de aproximadamente 39,45% no tempo
+da execução analisada.
 
-O experimento representa uma compara??o pontual e n?o comprova
-concorr?ncia efetiva nem desempenho generaliz?vel.
+O experimento representa uma comparação pontual e não comprova
+concorrência efetiva nem desempenho generalizável.
 
-Evid?ncia:
+Evidência:
 resultados/experimento_paralelismo/RELATORIO_COMPARATIVO.md
 
 ### Falhas controladas
 
-Foram realizadas 22 verifica??es em quatro situa??es simuladas:
+Foram realizadas 22 verificações em quatro situações simuladas:
 
 - Falha de ferramenta.
-- Aus?ncia de consulta obrigat?ria.
-- Diverg?ncia no valor total.
-- Diverg?ncia na quantidade de di?rias.
+- Ausência de consulta obrigatória.
+- Divergência no valor total.
+- Divergência na quantidade de diárias.
 
-As verifica??es confirmaram a atua??o da barreira nos cen?rios
-simulados. Os detalhes est?o em relatorio.md.
+As verificações confirmaram a atuação da barreira nos cenários
+simulados. Os detalhes estão em relatorio.md.
 
-## 11. Seguran?a e confer?ncia humana
+## 12. Segurança e conferência humana
 
-O sistema utiliza dados hipot?ticos fornecidos para o exerc?cio.
+O sistema utiliza dados hipotéticos fornecidos para o exercício.
 
 A chave OPENAI_API_KEY deve permanecer no arquivo .env,
-que est? exclu?do do controle de vers?o.
+que está excluído do controle de versão.
 
-O agente auxilia a instru??o, mas n?o autoriza pagamentos.
-A decis?o final permanece com o respons?vel humano.
+O agente auxilia a instrução, mas não autoriza pagamentos.
+A decisão final permanece com o responsável humano.
 
 A interface permite conferir os fundamentos, editar a minuta
-e registrar a decis?o do conferente.
+e registrar a decisão do conferente.
 
-Os bancos SQLite locais e os logs n?o s?o publicados no GitHub.
+Os bancos SQLite locais e os logs não são publicados no GitHub.
 
-## 12. Documenta??o
+## 13. Documentação
 
 - desenho.md: processo, quadro PEAS, confiabilidade composta,
   estimativa de custos por passos e quadrante de autonomia.
-- relatorio.md: resultados, diverg?ncias, falhas e conclus?es.
-- resultados/: arquivos das medi??es e avalia??es.
-- LEIA-ME.md: orienta??es complementares de entrega,
-  ap?s sua cria??o.
+- relatorio.md: resultados, divergências, falhas e conclusões.
+- resultados/: arquivos das medições e avaliações.
+- LEIA-ME.md: orientações complementares de entrega,
+  após sua criação.
 
 Os documentos originais do professor permanecem em
-material_professor/ para inclus?o no ZIP acad?mico final.
+material_professor/ para inclusão no ZIP acadêmico final.
 
-O reposit?rio p?blico cont?m o c?digo desenvolvido, os dados
-hipot?ticos necess?rios, o gabarito de avalia??o e as
-evid?ncias textuais revisadas.
+O repositório público contém o código desenvolvido, os dados
+hipotéticos necessários, o gabarito de avaliação e as
+evidências textuais revisadas.
 
-## 13. Limita??es
+## 14. Limitações
 
-- Os resultados foram medidos no ambiente e nos casos do exerc?cio.
-- O desempenho pode variar entre execu??es e ambientes.
-- A diverg?ncia do pedido DIA-2026-0106 permanece documentada.
-- O custo monet?rio n?o foi confirmado em todas as medi??es.
-- A decis?o administrativa n?o ? automatizada.
-- Os bancos locais de mem?ria n?o integram o reposit?rio p?blico.
-
-## 14. Autoria
-
-Yasmine Lino Franco
-
-FIC - DEV
-
-Desafio 1 IA - Agentes
-
-Projeto individual desenvolvido para fins acad?micos.
+- Os resultados foram medidos no ambiente e nos casos do exercício.
+- O desempenho pode variar entre execuções e ambientes.
+- A divergência do pedido DIA-2026-0106 permanece documentada.
+- O custo monetário não foi confirmado em todas as medições.
+- A decisão administrativa não é automatizada.
+- Os bancos locais de memória não integram o repositório público.
