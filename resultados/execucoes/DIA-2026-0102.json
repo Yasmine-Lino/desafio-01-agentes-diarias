@@ -1,0 +1,157 @@
+{
+  "numero_pedido": "DIA-2026-0102",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 13.0563,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0102",
+    "matricula": "205882",
+    "quantidade_diarias": 3.5,
+    "valor_total": 770.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro encontrado e compatível: matrícula 205882, cargo Motorista, grupo de diária C e sede em Cuiabá. Destino Sinop/MT é interior de MT."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados número do pedido, matrícula, datas de partida e retorno, destino e meio de transporte. Não foram identificadas divergências cadastrais."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "O pedido foi protocolado com 31 dias de antecedência em relação à partida, superando o mínimo normativo de 10 dias corridos."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não há prestação de contas vencida. Existe prestação de contas pendente, mas ainda dentro do prazo informado, com vencimento em 13/10/2026."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "Foram calculadas 3,5 diárias para novembro de 2026, sem diárias anteriores no mês, abaixo do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "O saldo disponível da unidade é de R$ 18.400,00, superior ao valor solicitado de R$ 770,00; saldo projetado após a solicitação: R$ 17.630,00."
+      }
+    ],
+    "recomendacao": "apto_para_autorizacao",
+    "exige_autorizacao_superior": false,
+    "pendencias": [],
+    "alertas": [
+      "A instrução não substitui a autorização formal do ordenador de despesa, a quem cabe deferir ou indeferir.",
+      "A prestação de contas do pedido DIA-2026-0041 permanece pendente, embora não esteja vencida na data da consulta."
+    ],
+    "minuta_despacho": "Instrução: após as verificações de cadastro, completude dos dados, antecedência, prestação de contas, limite mensal e saldo orçamentário, o pedido DIA-2026-0102 mostra-se apto para submissão à decisão do ordenador de despesa. Foram calculadas 3,5 diárias, no valor total de R$ 770,00, conforme grupo C e destino no interior de MT. Submeta-se à autoridade competente, sem que esta instrução implique autorização de pagamento."
+  },
+  "auditoria_ferramentas": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_prestacoes",
+      "verificar_orcamento"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_0fb7920f1f36391d006b006db3986887d186364ebd965f8228",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '205882', 'nome': 'Marcos Antônio Rezende', 'cargo': 'Motorista', 'grupo_diaria': 'C', 'unidade': 'CFF', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001DE7676BBF0>",
+          "start_time": 1795190196.2727907,
+          "end_time": 1795190196.2736628,
+          "duration": 0.0008722001221030951
+        }
+      },
+      {
+        "tool_call_id": "fc_0fb7920f1f36391d006b006db5680887d184932b41fa6bb8d2",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '205882', 'grupo_diaria': 'C', 'categoria_destino': 'interior_mt', 'data_partida': '2026-11-09', 'data_retorno': '2026-11-12', 'quantidade_diarias': 3.5, 'valor_unitario': 220.0, 'valor_total': 770.0, 'antecedencia_dias': 31, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 3.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001DE7676BE00>",
+          "start_time": 1795190197.798341,
+          "end_time": 1795190197.799956,
+          "duration": 0.0016150998417288065
+        }
+      },
+      {
+        "tool_call_id": "fc_0fb7920f1f36391d006b006db68bc487d1b56872e326775326",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '205882', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': [{'pedido': 'DIA-2026-0041', 'data_partida': '2026-10-01', 'data_retorno': '2026-10-06', 'quantidade': 5.5, 'prestacao_contas': 'pendente', 'prazo_prestacao': '2026-10-13', 'prestacao_vencida': False}]}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001DE7676BBC0>",
+          "start_time": 1795190198.9251997,
+          "end_time": 1795190198.926235,
+          "duration": 0.0010351999662816525
+        }
+      },
+      {
+        "tool_call_id": "fc_0fb7920f1f36391d006b006db7f3d487d184f8f2841fe6b4ae",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '205882', 'unidade': 'CFF', 'nome_unidade': 'Coordenadoria de Fiscalização de Flora', 'saldo_disponivel': 18400.0, 'valor_solicitado': 770.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 17630.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001DE75C20920>",
+          "start_time": 1795190200.3422215,
+          "end_time": 1795190200.3443718,
+          "duration": 0.002150199841707945
+        }
+      }
+    ]
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0102",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "metricas": {
+    "input_tokens": 9327,
+    "output_tokens": 632,
+    "total_tokens": 9959,
+    "audio_input_tokens": 0,
+    "audio_output_tokens": 0,
+    "audio_total_tokens": 0,
+    "cache_read_tokens": 8529,
+    "cache_write_tokens": 783,
+    "reasoning_tokens": 0,
+    "cost": null,
+    "timer": "<agno.utils.timer.Timer object at 0x000001DE7685AB10>",
+    "time_to_first_token": 2.848645999794826,
+    "duration": 13.027073299977928,
+    "details": {
+      "model": [
+        {
+          "input_tokens": 9327,
+          "output_tokens": 632,
+          "total_tokens": 9959,
+          "audio_input_tokens": 0,
+          "audio_output_tokens": 0,
+          "audio_total_tokens": 0,
+          "cache_read_tokens": 8529,
+          "cache_write_tokens": 783,
+          "reasoning_tokens": 0,
+          "cost": null,
+          "id": "gpt-5.6-luna",
+          "provider": "OpenAI Responses",
+          "provider_metrics": null
+        }
+      ]
+    },
+    "additional_metrics": null
+  },
+  "aprovado_para_revisao_humana": true
+}

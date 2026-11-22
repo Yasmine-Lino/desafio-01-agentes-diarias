@@ -1,0 +1,310 @@
+{
+  "pedido": "DIA-2026-0111",
+  "cenario": "C",
+  "modelo": "gpt-5.6-luna",
+  "configuracao": {
+    "historico": true,
+    "limite_runs": 3,
+    "memoria_pessoal": true
+  },
+  "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+  "turnos": [
+    {
+      "tipo": "diligencia_local",
+      "status": "conferido",
+      "session_id": "DIA-2026-0111",
+      "user_id": null,
+      "chamadas_ao_modelo": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "segundos": 0.147594,
+      "recomendacao": "diligencia",
+      "verificacoes": [
+        {
+          "criterio": "cadastro",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "dados_completos",
+          "situacao": "nao_atende"
+        },
+        {
+          "criterio": "antecedencia",
+          "situacao": "nao_verificado"
+        },
+        {
+          "criterio": "prestacao_contas",
+          "situacao": "nao_verificado"
+        },
+        {
+          "criterio": "limite_mensal",
+          "situacao": "nao_verificado"
+        },
+        {
+          "criterio": "saldo_orcamentario",
+          "situacao": "nao_verificado"
+        }
+      ],
+      "correcao_recuperada": null,
+      "barreira": "aprovada",
+      "contexto": [],
+      "requisicoes": [],
+      "custo_estimado_usd": null,
+      "custo_faturado_usd": null,
+      "situacao_custo": "sem_chamada",
+      "situacao_original": "retorno_ausente"
+    },
+    {
+      "tipo": "retomada_com_modelo",
+      "status": "conferido",
+      "session_id": "DIA-2026-0111",
+      "user_id": "206689",
+      "chamadas_ao_modelo": 6,
+      "input_tokens": 12705,
+      "output_tokens": 580,
+      "total_tokens": 13285,
+      "segundos": 7.938941,
+      "recomendacao": "apto_para_autorizacao",
+      "verificacoes": [
+        {
+          "criterio": "cadastro",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "dados_completos",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "antecedencia",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "prestacao_contas",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "limite_mensal",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "saldo_orcamentario",
+          "situacao": "atende"
+        }
+      ],
+      "correcao_recuperada": {
+        "campo": "data_retorno",
+        "valor_validado": "2026-11-20"
+      },
+      "barreira": "aprovada",
+      "contexto": [
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0111",
+            "matricula": "206689",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-17",
+            "data_retorno": "2026-11-20"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "data_retorno_ausente",
+            "data_retorno_corrigida_e_validada": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "memoria_pessoal",
+          "papeis": {
+            "system": 1,
+            "user": 1
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1,
+            "assistant": 1,
+            "tool": 1
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0111",
+            "matricula": "206689",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-17",
+            "data_retorno": "2026-11-20"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "data_retorno_ausente",
+            "data_retorno_corrigida_e_validada": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1,
+            "assistant": 2,
+            "tool": 2
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0111",
+            "matricula": "206689",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-17",
+            "data_retorno": "2026-11-20"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "data_retorno_ausente",
+            "data_retorno_corrigida_e_validada": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1,
+            "assistant": 3,
+            "tool": 3
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0111",
+            "matricula": "206689",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-17",
+            "data_retorno": "2026-11-20"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "data_retorno_ausente",
+            "data_retorno_corrigida_e_validada": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1,
+            "assistant": 4,
+            "tool": 4
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0111",
+            "matricula": "206689",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-17",
+            "data_retorno": "2026-11-20"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "data_retorno_ausente",
+            "data_retorno_corrigida_e_validada": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        }
+      ],
+      "requisicoes": [
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2041,
+            "output_tokens": 16,
+            "total_tokens": 2057,
+            "cached_tokens": 0,
+            "cache_write_tokens": 2038
+          }
+        },
+        {
+          "finalidade": "memoria_pessoal",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 1122,
+            "output_tokens": 4,
+            "total_tokens": 1126,
+            "cached_tokens": 0,
+            "cache_write_tokens": 1119
+          }
+        },
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2131,
+            "output_tokens": 17,
+            "total_tokens": 2148,
+            "cached_tokens": 2038,
+            "cache_write_tokens": 90
+          }
+        },
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2315,
+            "output_tokens": 16,
+            "total_tokens": 2331,
+            "cached_tokens": 2128,
+            "cache_write_tokens": 184
+          }
+        },
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2494,
+            "output_tokens": 17,
+            "total_tokens": 2511,
+            "cached_tokens": 2312,
+            "cache_write_tokens": 179
+          }
+        },
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2602,
+            "output_tokens": 510,
+            "total_tokens": 3112,
+            "cached_tokens": 2491,
+            "cache_write_tokens": 108
+          }
+        }
+      ],
+      "custo_estimado_usd": "0.00180848",
+      "custo_faturado_usd": null,
+      "situacao_custo": "estimado",
+      "runs_persistidos": 1,
+      "memorias_persistidas": 0,
+      "chamadas_por_finalidade": {
+        "analise": 5,
+        "memoria_pessoal": 1
+      },
+      "falhas_no_modelo": []
+    }
+  ]
+}

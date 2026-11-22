@@ -1,0 +1,405 @@
+{
+  "inicio_utc": "2026-11-22T18:37:43.914578+00:00",
+  "tarifa_referencia": {
+    "fonte": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "consulta": "2026-11-22",
+    "moeda": "USD",
+    "por_milhao": {
+      "entrada": "0.20",
+      "entrada_cache": "0.02",
+      "saida": "1.20"
+    }
+  },
+  "combinacoes": [
+    {
+      "pedido": "DIA-2026-0111",
+      "cenario": "A",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": false,
+        "limite_runs": 0,
+        "memoria_pessoal": false
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "conferido",
+          "session_id": "DIA-2026-0111",
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": 0.218743,
+          "recomendacao": "diligencia",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "nao_atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "nao_verificado"
+            }
+          ],
+          "correcao_recuperada": null,
+          "barreira": "aprovada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "sem_chamada",
+          "situacao_original": "retorno_ausente"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "erro",
+          "session_id": "DIA-2026-0111",
+          "user_id": "206689",
+          "chamadas_ao_modelo": 1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": 2.491743,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": {
+            "campo": "data_retorno",
+            "valor_validado": "2026-11-20"
+          },
+          "barreira": "nao_avaliada",
+          "contexto": [
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            }
+          ],
+          "requisicoes": [
+            {
+              "finalidade": "analise",
+              "http_status": null,
+              "metricas": null
+            }
+          ],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel",
+          "runs_persistidos": 0,
+          "memorias_persistidas": 0,
+          "classe_erro": "RuntimeError",
+          "chamadas_por_finalidade": {
+            "analise": 1
+          },
+          "falhas_no_modelo": [
+            "ModelProviderError"
+          ]
+        }
+      ]
+    },
+    {
+      "pedido": "DIA-2026-0111",
+      "cenario": "B",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": true,
+        "limite_runs": 3,
+        "memoria_pessoal": false
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        }
+      ],
+      "motivo_nao_executado": "falha_de_transporte_ou_conexao"
+    },
+    {
+      "pedido": "DIA-2026-0111",
+      "cenario": "C",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": true,
+        "limite_runs": 3,
+        "memoria_pessoal": true
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        }
+      ],
+      "motivo_nao_executado": "falha_de_transporte_ou_conexao"
+    },
+    {
+      "pedido": "DIA-2026-0112",
+      "cenario": "A",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": false,
+        "limite_runs": 0,
+        "memoria_pessoal": false
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        }
+      ],
+      "motivo_nao_executado": "falha_de_transporte_ou_conexao"
+    },
+    {
+      "pedido": "DIA-2026-0112",
+      "cenario": "B",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": true,
+        "limite_runs": 3,
+        "memoria_pessoal": false
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        }
+      ],
+      "motivo_nao_executado": "falha_de_transporte_ou_conexao"
+    },
+    {
+      "pedido": "DIA-2026-0112",
+      "cenario": "C",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": true,
+        "limite_runs": 3,
+        "memoria_pessoal": true
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "nao_executado",
+          "session_id": null,
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": null,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": null,
+          "barreira": "nao_avaliada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "nao_disponivel"
+        }
+      ],
+      "motivo_nao_executado": "falha_de_transporte_ou_conexao"
+    }
+  ]
+}

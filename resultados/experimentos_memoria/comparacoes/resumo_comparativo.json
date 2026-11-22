@@ -1,0 +1,103 @@
+{
+  "pedido": "DIA-2026-0101",
+  "cenarios": {
+    "A": {
+      "turnos": [
+        {
+          "turno": 1,
+          "status": "COMPLETED",
+          "duracao": 12.972251000115648,
+          "ferramentas": 4,
+          "barreira_aprovada": true,
+          "tokens_entrada": 9292,
+          "tokens_saida": 542,
+          "tokens_totais": 9834,
+          "custo": null
+        },
+        {
+          "turno": 2,
+          "status": "COMPLETED",
+          "duracao": 10.549670399865136,
+          "ferramentas": 4,
+          "barreira_aprovada": true,
+          "tokens_entrada": 9292,
+          "tokens_saida": 563,
+          "tokens_totais": 9855,
+          "custo": null
+        }
+      ],
+      "duracao_media": 11.761
+    },
+    "B": {
+      "turnos": [
+        {
+          "turno": 1,
+          "status": "COMPLETED",
+          "duracao": 14.01175870001316,
+          "ferramentas": 4,
+          "barreira_aprovada": true,
+          "tokens_entrada": 9368,
+          "tokens_saida": 528,
+          "tokens_totais": 9896,
+          "custo": null
+        },
+        {
+          "turno": 2,
+          "status": "COMPLETED",
+          "duracao": 10.09980019996874,
+          "ferramentas": 4,
+          "barreira_aprovada": true,
+          "tokens_entrada": 15643,
+          "tokens_saida": 505,
+          "tokens_totais": 16148,
+          "custo": null
+        }
+      ],
+      "duracao_media": 12.056,
+      "persistencia": {
+        "integridade": "ok",
+        "tabelas": [
+          "agno_sessions",
+          "agno_schema_versions",
+          "agno_runs"
+        ]
+      }
+    },
+    "C": {
+      "turnos": [
+        {
+          "turno": 1,
+          "status": "COMPLETED",
+          "duracao": 14.161795299965888,
+          "ferramentas": 4,
+          "barreira_aprovada": true,
+          "tokens_entrada": 13203,
+          "tokens_saida": 690,
+          "tokens_totais": 13893,
+          "custo": null
+        },
+        {
+          "turno": 2,
+          "status": "COMPLETED",
+          "duracao": 10.1541246001143,
+          "ferramentas": 4,
+          "barreira_aprovada": true,
+          "tokens_entrada": 17202,
+          "tokens_saida": 543,
+          "tokens_totais": 17745,
+          "custo": null
+        }
+      ],
+      "duracao_media": 12.158,
+      "persistencia": {
+        "integridade": "ok",
+        "tabelas": [
+          "agno_memories",
+          "agno_schema_versions",
+          "agno_sessions",
+          "agno_runs"
+        ]
+      }
+    }
+  }
+}

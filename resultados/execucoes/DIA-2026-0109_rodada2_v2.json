@@ -1,0 +1,132 @@
+{
+  "numero_pedido": "DIA-2026-0109",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 9.7358,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0109",
+    "matricula": "208114",
+    "quantidade_diarias": 3.5,
+    "valor_total": 980.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado e compatível: matrícula 208114, cargo Analista de Meio Ambiente, grupo B e sede em Sinop. O destino Juína/MT é interior de MT."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados número do pedido, matrícula, datas de partida e retorno, destino e transporte; não foi identificada divergência cadastral."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "O pedido foi protocolado 45 dias antes da partida, atendendo à antecedência mínima de 10 dias corridos."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não há prestação de contas vencida registrada para a matrícula 208114."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "nao_atende",
+        "detalhe": "O pedido acrescenta 3,5 diárias às 8 diárias já consideradas em novembro de 2026, totalizando 11,5 diárias, acima do limite mensal de 10."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo disponível de R$ 5.300,00 e o valor solicitado é de R$ 980,00, resultando em saldo projetado de R$ 4.320,00."
+      }
+    ],
+    "recomendacao": "nao_recomendado",
+    "exige_autorizacao_superior": false,
+    "pendencias": [],
+    "alertas": [
+      "O limite mensal de 10 diárias é excedido em 1,5 diária."
+    ],
+    "minuta_despacho": "Instrução técnica: não recomendado o prosseguimento do pedido DIA-2026-0109, pois o total projetado para a servidora no mês da partida é de 11,5 diárias, superior ao limite mensal de 10 diárias previsto no art. 6º da IN SEMA nº 07/2026. Os demais critérios verificados — cadastro, dados informados, antecedência, prestação de contas e saldo orçamentário — atendem aos requisitos. A decisão final compete ao ordenador de despesa."
+  },
+  "auditoria_ferramentas": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_orcamento",
+      "verificar_prestacoes"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_0b78c9d85e69f93a006b00a159a4f087d19810895a8a080240",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '208114', 'nome': 'Larissa Teixeira Moura', 'cargo': 'Analista de Meio Ambiente', 'grupo_diaria': 'B', 'unidade': 'URS', 'municipio_sede': 'Sinop'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000015758425E50>",
+          "start_time": 1795203418.0862923,
+          "end_time": 1795203418.0871634,
+          "duration": 0.0008712999988347292
+        }
+      },
+      {
+        "tool_call_id": "fc_0b78c9d85e69f93a006b00a15b005c87d18c4817deaea61b75",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '208114', 'grupo_diaria': 'B', 'categoria_destino': 'interior_mt', 'data_partida': '2026-11-23', 'data_retorno': '2026-11-26', 'quantidade_diarias': 3.5, 'valor_unitario': 280.0, 'valor_total': 980.0, 'antecedencia_dias': 45, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 8.0, 'total_projetado_mes': 11.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': False}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000015758426150>",
+          "start_time": 1795203419.3939638,
+          "end_time": 1795203419.3955598,
+          "duration": 0.0015958999283611774
+        }
+      },
+      {
+        "tool_call_id": "fc_0b78c9d85e69f93a006b00a15c0da487d1aab28f7df4594aec",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '208114', 'unidade': 'URS', 'nome_unidade': 'Unidade Regional de Sinop', 'saldo_disponivel': 5300.0, 'valor_solicitado': 980.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 4320.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000015758425E20>",
+          "start_time": 1795203420.4519176,
+          "end_time": 1795203420.4591315,
+          "duration": 0.007213900098577142
+        }
+      },
+      {
+        "tool_call_id": "fc_0b78c9d85e69f93a006b00a15d30f087d19801ed95653d5a78",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '208114', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 8.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': [{'pedido': 'DIA-2026-0062', 'data_partida': '2026-11-03', 'data_retorno': '2026-11-07', 'quantidade': 4.5, 'prestacao_contas': 'viagem_futura', 'prazo_prestacao': '2026-11-13', 'prestacao_vencida': False}, {'pedido': 'DIA-2026-0063', 'data_partida': '2026-11-16', 'data_retorno': '2026-11-19', 'quantidade': 3.5, 'prestacao_contas': 'viagem_futura', 'prazo_prestacao': '2026-11-26', 'prestacao_vencida': False}]}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000015758425DF0>",
+          "start_time": 1795203421.6143641,
+          "end_time": 1795203421.615437,
+          "duration": 0.001072899904102087
+        }
+      }
+    ]
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0109",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "metricas": {
+    "input_tokens": 10807,
+    "output_tokens": 581,
+    "total_tokens": 11388,
+    "cache_read_tokens": 9928,
+    "cache_write_tokens": 864,
+    "reasoning_tokens": 0,
+    "cost": null,
+    "duration": 9.732583799865097,
+    "time_to_first_token": 1.469748399918899
+  },
+  "aprovado_para_revisao_humana": true
+}

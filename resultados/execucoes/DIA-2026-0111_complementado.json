@@ -1,0 +1,128 @@
+{
+  "numero_pedido": "DIA-2026-0111",
+  "tipo_execucao": "complementacao_com_memoria",
+  "duracao_segundos": 15.493,
+  "status": "runstatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0111",
+    "matricula": "206689",
+    "quantidade_diarias": 3.5,
+    "valor_total": 980.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado e compatível: matrícula 206689, cargo Fiscal Ambiental, grupo B, unidade CFF e sede em Cuiabá."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "nao_atende",
+        "detalhe": "A data de retorno foi informada, mas a justificativa registra que o retorno está a definir, gerando divergência e insuficiência quanto ao planejamento do deslocamento."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "Pedido protocolado com 39 dias corridos de antecedência, atendendo ao mínimo de 10 dias."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não há prestação de contas vencida para a servidora."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "Foram calculadas 3,5 diárias, sem diárias anteriores no mês da partida, dentro do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo suficiente na unidade CFF: R$ 18.400,00 disponíveis para uma solicitação de R$ 980,00."
+      }
+    ],
+    "recomendacao": "diligencia",
+    "exige_autorizacao_superior": false,
+    "pendencias": [
+      "Esclarecer e compatibilizar a data de retorno prevista com a informação de que o retorno está a definir.",
+      "Apresentar planejamento definitivo do período do deslocamento, se houver alteração das datas ou da quantidade de diárias."
+    ],
+    "alertas": [
+      "A justificativa do solicitante foi considerada apenas como informação declaratória, não como prova de urgência ou autorização formal.",
+      "A instrução não substitui a autorização do ordenador de despesa."
+    ],
+    "minuta_despacho": "Restitua-se o pedido ao servidor, em diligência, para esclarecimento da divergência relativa à data de retorno e apresentação do planejamento definitivo do deslocamento, nos termos do art. 9º da Instrução Normativa SEMA nº 07/2026. Após o saneamento, retornem os autos para nova análise. A presente instrução não constitui autorização de pagamento ou concessão de diária, cabendo a decisão ao ordenador de despesa."
+  },
+  "auditoria": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_prestacoes",
+      "verificar_orcamento"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_01684ecf8cca0618006b008697ec8087d183825cf662efec23",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '206689', 'nome': 'Beatriz Moraes Cunha', 'cargo': 'Fiscal Ambiental', 'grupo_diaria': 'B', 'unidade': 'CFF', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000029FE38A03E0>",
+          "start_time": 1795196568.5798275,
+          "end_time": 1795196568.595716,
+          "duration": 0.015888500027358532
+        }
+      },
+      {
+        "tool_call_id": "fc_01684ecf8cca0618006b008699ef9887d1aaed9025f9203fe1",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '206689', 'grupo_diaria': 'B', 'categoria_destino': 'interior_mt', 'data_partida': '2026-11-17', 'data_retorno': '2026-11-20', 'quantidade_diarias': 3.5, 'valor_unitario': 280.0, 'valor_total': 980.0, 'antecedencia_dias': 39, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 3.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000029FE38A03B0>",
+          "start_time": 1795196570.2741995,
+          "end_time": 1795196570.279704,
+          "duration": 0.005504699889570475
+        }
+      },
+      {
+        "tool_call_id": "fc_01684ecf8cca0618006b00869b2da087d1a2e2a92a30fd00c0",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '206689', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': [{'pedido': 'DIA-2026-0037', 'data_partida': '2026-09-29', 'data_retorno': '2026-10-01', 'quantidade': 2.5, 'prestacao_contas': 'entregue', 'prazo_prestacao': '2026-10-08', 'prestacao_vencida': False}]}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000029FE38A0200>",
+          "start_time": 1795196571.5311377,
+          "end_time": 1795196571.5338452,
+          "duration": 0.002707500010728836
+        }
+      },
+      {
+        "tool_call_id": "fc_01684ecf8cca0618006b00869c32a087d1947bf5f57f537469",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '206689', 'unidade': 'CFF', 'nome_unidade': 'Coordenadoria de Fiscalização de Flora', 'saldo_disponivel': 18400.0, 'valor_solicitado': 980.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 17420.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000029FE38A0350>",
+          "start_time": 1795196572.5548813,
+          "end_time": 1795196572.5569534,
+          "duration": 0.002072000177577138
+        }
+      }
+    ]
+  },
+  "validacao": {
+    "numero_pedido": "DIA-2026-0111",
+    "aprovado": false,
+    "erros": [
+      "Divergencia normativa em dados_completos: esperado=atende, recebido=nao_atende"
+    ],
+    "mensagem": "Instrucao bloqueada para revisao humana."
+  },
+  "historico_preservado": true,
+  "usuario_preservado": true
+}

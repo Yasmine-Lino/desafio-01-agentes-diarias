@@ -1,0 +1,17 @@
+﻿Evidência offline — quatro falhas controladas da barreira
+Projeto individual de Yasmine Lino Franco
+
+Comando: .venv\Scripts\python.exe -B -X utf8 testes\testar_falhas_barreira_offline.py
+Modo: somente testes offline; evidências e objetos sintéticos; sem rede, API, gabarito ou SQLite.
+
+test_erro_em_ferramenta_obrigatoria (__main__.FalhasBarreiraOffline.test_erro_em_ferramenta_obrigatoria) ... ok
+test_ferramenta_obrigatoria_ausente (__main__.FalhasBarreiraOffline.test_ferramenta_obrigatoria_ausente) ... ok
+test_quantidade_diarias_adulterada (__main__.FalhasBarreiraOffline.test_quantidade_diarias_adulterada) ... ok
+test_valor_financeiro_adulterado (__main__.FalhasBarreiraOffline.test_valor_financeiro_adulterado) ... ok
+System.Management.Automation.RemoteException
+----------------------------------------------------------------------
+Ran 4 tests in 0.005s
+System.Management.Automation.RemoteException
+OK
+
+Código de saída: 0

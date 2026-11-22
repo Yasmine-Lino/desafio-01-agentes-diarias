@@ -1,0 +1,1570 @@
+{
+  "inicio_utc": "2026-11-22T18:47:36.188357+00:00",
+  "tarifa_referencia": {
+    "fonte": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "consulta": "2026-11-22",
+    "moeda": "USD",
+    "por_milhao": {
+      "entrada": "0.20",
+      "entrada_cache": "0.02",
+      "saida": "1.20"
+    }
+  },
+  "combinacoes": [
+    {
+      "pedido": "DIA-2026-0111",
+      "cenario": "A",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": false,
+        "limite_runs": 0,
+        "memoria_pessoal": false
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "conferido",
+          "session_id": "DIA-2026-0111",
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": 0.234553,
+          "recomendacao": "diligencia",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "nao_atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "nao_verificado"
+            }
+          ],
+          "correcao_recuperada": null,
+          "barreira": "aprovada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "sem_chamada",
+          "situacao_original": "retorno_ausente"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "conferido",
+          "session_id": "DIA-2026-0111",
+          "user_id": "206689",
+          "chamadas_ao_modelo": 5,
+          "input_tokens": 11453,
+          "output_tokens": 579,
+          "total_tokens": 12032,
+          "segundos": 9.974306,
+          "recomendacao": "apto_para_autorizacao",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "atende"
+            }
+          ],
+          "correcao_recuperada": {
+            "campo": "data_retorno",
+            "valor_validado": "2026-11-20"
+          },
+          "barreira": "aprovada",
+          "contexto": [
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 1,
+                "tool": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 2,
+                "tool": 2
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 3,
+                "tool": 3
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 4,
+                "tool": 4
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            }
+          ],
+          "requisicoes": [
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2015,
+                "output_tokens": 16,
+                "total_tokens": 2031,
+                "cached_tokens": 0,
+                "cache_write_tokens": 2012
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2105,
+                "output_tokens": 17,
+                "total_tokens": 2122,
+                "cached_tokens": 2012,
+                "cache_write_tokens": 90
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2289,
+                "output_tokens": 16,
+                "total_tokens": 2305,
+                "cached_tokens": 2102,
+                "cache_write_tokens": 184
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2468,
+                "output_tokens": 17,
+                "total_tokens": 2485,
+                "cached_tokens": 2286,
+                "cache_write_tokens": 179
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2576,
+                "output_tokens": 513,
+                "total_tokens": 3089,
+                "cached_tokens": 2465,
+                "cache_write_tokens": 108
+              }
+            }
+          ],
+          "custo_estimado_usd": "0.00151835",
+          "custo_faturado_usd": null,
+          "situacao_custo": "estimado",
+          "runs_persistidos": 0,
+          "memorias_persistidas": 0,
+          "chamadas_por_finalidade": {
+            "analise": 5
+          },
+          "falhas_no_modelo": []
+        }
+      ]
+    },
+    {
+      "pedido": "DIA-2026-0111",
+      "cenario": "B",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": true,
+        "limite_runs": 3,
+        "memoria_pessoal": false
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "conferido",
+          "session_id": "DIA-2026-0111",
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": 0.148081,
+          "recomendacao": "diligencia",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "nao_atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "nao_verificado"
+            }
+          ],
+          "correcao_recuperada": null,
+          "barreira": "aprovada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "sem_chamada",
+          "situacao_original": "retorno_ausente"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "erro",
+          "session_id": "DIA-2026-0111",
+          "user_id": "206689",
+          "chamadas_ao_modelo": 2,
+          "input_tokens": 4120,
+          "output_tokens": 33,
+          "total_tokens": 4153,
+          "segundos": 2.377289,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": {
+            "campo": "data_retorno",
+            "valor_validado": "2026-11-20"
+          },
+          "barreira": "nao_avaliada",
+          "contexto": [
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 1,
+                "tool": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 2,
+                "tool": 2
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false
+            }
+          ],
+          "requisicoes": [
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2015,
+                "output_tokens": 16,
+                "total_tokens": 2031,
+                "cached_tokens": 2012,
+                "cache_write_tokens": 0
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2105,
+                "output_tokens": 17,
+                "total_tokens": 2122,
+                "cached_tokens": 2102,
+                "cache_write_tokens": 0
+              }
+            }
+          ],
+          "custo_estimado_usd": "0.00012308",
+          "custo_faturado_usd": null,
+          "situacao_custo": "estimado",
+          "runs_persistidos": 1,
+          "memorias_persistidas": 0,
+          "classe_erro": "RuntimeError",
+          "chamadas_por_finalidade": {
+            "analise": 2
+          },
+          "falhas_no_modelo": [
+            {
+              "tipo": "ErroNaoClassificado",
+              "etapa": "preparacao",
+              "http_status": null,
+              "codigo_provedor": null,
+              "segundos": 0.012104,
+              "tentativas": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pedido": "DIA-2026-0111",
+      "cenario": "C",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": true,
+        "limite_runs": 3,
+        "memoria_pessoal": true
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "conferido",
+          "session_id": "DIA-2026-0111",
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": 0.147594,
+          "recomendacao": "diligencia",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "nao_atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "nao_verificado"
+            }
+          ],
+          "correcao_recuperada": null,
+          "barreira": "aprovada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "sem_chamada",
+          "situacao_original": "retorno_ausente"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "conferido",
+          "session_id": "DIA-2026-0111",
+          "user_id": "206689",
+          "chamadas_ao_modelo": 6,
+          "input_tokens": 12705,
+          "output_tokens": 580,
+          "total_tokens": 13285,
+          "segundos": 7.938941,
+          "recomendacao": "apto_para_autorizacao",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "atende"
+            }
+          ],
+          "correcao_recuperada": {
+            "campo": "data_retorno",
+            "valor_validado": "2026-11-20"
+          },
+          "barreira": "aprovada",
+          "contexto": [
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "memoria_pessoal",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 1,
+                "tool": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 2,
+                "tool": 2
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 3,
+                "tool": 3
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 4,
+                "tool": 4
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0111",
+                "matricula": "206689",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-17",
+                "data_retorno": "2026-11-20"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "data_retorno_ausente",
+                "data_retorno_corrigida_e_validada": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            }
+          ],
+          "requisicoes": [
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2041,
+                "output_tokens": 16,
+                "total_tokens": 2057,
+                "cached_tokens": 0,
+                "cache_write_tokens": 2038
+              }
+            },
+            {
+              "finalidade": "memoria_pessoal",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 1122,
+                "output_tokens": 4,
+                "total_tokens": 1126,
+                "cached_tokens": 0,
+                "cache_write_tokens": 1119
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2131,
+                "output_tokens": 17,
+                "total_tokens": 2148,
+                "cached_tokens": 2038,
+                "cache_write_tokens": 90
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2315,
+                "output_tokens": 16,
+                "total_tokens": 2331,
+                "cached_tokens": 2128,
+                "cache_write_tokens": 184
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2494,
+                "output_tokens": 17,
+                "total_tokens": 2511,
+                "cached_tokens": 2312,
+                "cache_write_tokens": 179
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2602,
+                "output_tokens": 510,
+                "total_tokens": 3112,
+                "cached_tokens": 2491,
+                "cache_write_tokens": 108
+              }
+            }
+          ],
+          "custo_estimado_usd": "0.00180848",
+          "custo_faturado_usd": null,
+          "situacao_custo": "estimado",
+          "runs_persistidos": 1,
+          "memorias_persistidas": 0,
+          "chamadas_por_finalidade": {
+            "analise": 5,
+            "memoria_pessoal": 1
+          },
+          "falhas_no_modelo": []
+        }
+      ]
+    },
+    {
+      "pedido": "DIA-2026-0112",
+      "cenario": "A",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": false,
+        "limite_runs": 0,
+        "memoria_pessoal": false
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "conferido",
+          "session_id": "DIA-2026-0112",
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": 0.21678,
+          "recomendacao": "diligencia",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "nao_atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "nao_verificado"
+            }
+          ],
+          "correcao_recuperada": null,
+          "barreira": "aprovada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "sem_chamada",
+          "situacao_original": "divergencia_cadastral"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "conferido",
+          "session_id": "DIA-2026-0112",
+          "user_id": "207418",
+          "chamadas_ao_modelo": 5,
+          "input_tokens": 11260,
+          "output_tokens": 554,
+          "total_tokens": 11814,
+          "segundos": 8.432,
+          "recomendacao": "apto_para_autorizacao",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "atende"
+            }
+          ],
+          "correcao_recuperada": {
+            "campo": "matricula",
+            "valor_validado": "207418"
+          },
+          "barreira": "aprovada",
+          "contexto": [
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 1,
+                "tool": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 2,
+                "tool": 2
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 3,
+                "tool": 3
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 4,
+                "tool": 4
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            }
+          ],
+          "requisicoes": [
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2026,
+                "output_tokens": 16,
+                "total_tokens": 2042,
+                "cached_tokens": 1852,
+                "cache_write_tokens": 171
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2116,
+                "output_tokens": 17,
+                "total_tokens": 2133,
+                "cached_tokens": 2023,
+                "cache_write_tokens": 90
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2217,
+                "output_tokens": 16,
+                "total_tokens": 2233,
+                "cached_tokens": 2113,
+                "cache_write_tokens": 101
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2396,
+                "output_tokens": 17,
+                "total_tokens": 2413,
+                "cached_tokens": 2214,
+                "cache_write_tokens": 179
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2505,
+                "output_tokens": 488,
+                "total_tokens": 2993,
+                "cached_tokens": 2393,
+                "cache_write_tokens": 109
+              }
+            }
+          ],
+          "custo_estimado_usd": "0.00104220",
+          "custo_faturado_usd": null,
+          "situacao_custo": "estimado",
+          "runs_persistidos": 0,
+          "memorias_persistidas": 0,
+          "chamadas_por_finalidade": {
+            "analise": 5
+          },
+          "falhas_no_modelo": []
+        }
+      ]
+    },
+    {
+      "pedido": "DIA-2026-0112",
+      "cenario": "B",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": true,
+        "limite_runs": 3,
+        "memoria_pessoal": false
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "conferido",
+          "session_id": "DIA-2026-0112",
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": 0.146741,
+          "recomendacao": "diligencia",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "nao_atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "nao_verificado"
+            }
+          ],
+          "correcao_recuperada": null,
+          "barreira": "aprovada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "sem_chamada",
+          "situacao_original": "divergencia_cadastral"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "erro",
+          "session_id": "DIA-2026-0112",
+          "user_id": "207418",
+          "chamadas_ao_modelo": 1,
+          "input_tokens": 2026,
+          "output_tokens": 16,
+          "total_tokens": 2042,
+          "segundos": 1.472618,
+          "recomendacao": null,
+          "verificacoes": [],
+          "correcao_recuperada": {
+            "campo": "matricula",
+            "valor_validado": "207418"
+          },
+          "barreira": "nao_avaliada",
+          "contexto": [
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 1,
+                "tool": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false
+            }
+          ],
+          "requisicoes": [
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2026,
+                "output_tokens": 16,
+                "total_tokens": 2042,
+                "cached_tokens": 2023,
+                "cache_write_tokens": 0
+              }
+            }
+          ],
+          "custo_estimado_usd": "0.00006026",
+          "custo_faturado_usd": null,
+          "situacao_custo": "estimado",
+          "runs_persistidos": 1,
+          "memorias_persistidas": 0,
+          "classe_erro": "RuntimeError",
+          "chamadas_por_finalidade": {
+            "analise": 1
+          },
+          "falhas_no_modelo": [
+            {
+              "tipo": "ErroNaoClassificado",
+              "etapa": "preparacao",
+              "http_status": null,
+              "codigo_provedor": null,
+              "segundos": 0.008284,
+              "tentativas": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pedido": "DIA-2026-0112",
+      "cenario": "C",
+      "modelo": "gpt-5.6-luna",
+      "configuracao": {
+        "historico": true,
+        "limite_runs": 3,
+        "memoria_pessoal": true
+      },
+      "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+      "turnos": [
+        {
+          "tipo": "diligencia_local",
+          "status": "conferido",
+          "session_id": "DIA-2026-0112",
+          "user_id": null,
+          "chamadas_ao_modelo": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "segundos": 0.15393,
+          "recomendacao": "diligencia",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "nao_atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "nao_verificado"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "nao_verificado"
+            }
+          ],
+          "correcao_recuperada": null,
+          "barreira": "aprovada",
+          "contexto": [],
+          "requisicoes": [],
+          "custo_estimado_usd": null,
+          "custo_faturado_usd": null,
+          "situacao_custo": "sem_chamada",
+          "situacao_original": "divergencia_cadastral"
+        },
+        {
+          "tipo": "retomada_com_modelo",
+          "status": "conferido",
+          "session_id": "DIA-2026-0112",
+          "user_id": "207418",
+          "chamadas_ao_modelo": 6,
+          "input_tokens": 12523,
+          "output_tokens": 578,
+          "total_tokens": 13101,
+          "segundos": 8.243325,
+          "recomendacao": "apto_para_autorizacao",
+          "verificacoes": [
+            {
+              "criterio": "cadastro",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "dados_completos",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "antecedencia",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "prestacao_contas",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "limite_mensal",
+              "situacao": "atende"
+            },
+            {
+              "criterio": "saldo_orcamentario",
+              "situacao": "atende"
+            }
+          ],
+          "correcao_recuperada": {
+            "campo": "matricula",
+            "valor_validado": "207418"
+          },
+          "barreira": "aprovada",
+          "contexto": [
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "memoria_pessoal",
+              "papeis": {
+                "system": 1,
+                "user": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 1,
+                "tool": 1
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 2,
+                "tool": 2
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 3,
+                "tool": 3
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            },
+            {
+              "finalidade": "analise",
+              "papeis": {
+                "system": 1,
+                "user": 1,
+                "assistant": 4,
+                "tool": 4
+              },
+              "mensagens_de_replay": 0,
+              "memoria_pessoal_no_sistema": false,
+              "entrada_operacional": {
+                "numero": "DIA-2026-0112",
+                "matricula": "207418",
+                "data_pedido": "2026-10-09",
+                "data_partida": "2026-11-24",
+                "data_retorno": "2026-11-27"
+              },
+              "resumo_administrativo": {
+                "motivo_diligencia": "divergencia_cadastral",
+                "matricula_corrigida_e_validada": true,
+                "titular_atual_conferido_no_cadastro": true
+              },
+              "justificativa_presente": false,
+              "payload_verificado": true
+            }
+          ],
+          "requisicoes": [
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2052,
+                "output_tokens": 16,
+                "total_tokens": 2068,
+                "cached_tokens": 1878,
+                "cache_write_tokens": 171
+              }
+            },
+            {
+              "finalidade": "memoria_pessoal",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 1133,
+                "output_tokens": 4,
+                "total_tokens": 1137,
+                "cached_tokens": 0,
+                "cache_write_tokens": 1130
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2142,
+                "output_tokens": 17,
+                "total_tokens": 2159,
+                "cached_tokens": 2049,
+                "cache_write_tokens": 90
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2243,
+                "output_tokens": 16,
+                "total_tokens": 2259,
+                "cached_tokens": 2139,
+                "cache_write_tokens": 101
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2422,
+                "output_tokens": 17,
+                "total_tokens": 2439,
+                "cached_tokens": 2240,
+                "cache_write_tokens": 179
+              }
+            },
+            {
+              "finalidade": "analise",
+              "http_status": 200,
+              "metricas": {
+                "input_tokens": 2531,
+                "output_tokens": 508,
+                "total_tokens": 3039,
+                "cached_tokens": 2419,
+                "cache_write_tokens": 109
+              }
+            }
+          ],
+          "custo_estimado_usd": "0.00135670",
+          "custo_faturado_usd": null,
+          "situacao_custo": "estimado",
+          "runs_persistidos": 1,
+          "memorias_persistidas": 0,
+          "chamadas_por_finalidade": {
+            "analise": 5,
+            "memoria_pessoal": 1
+          },
+          "falhas_no_modelo": []
+        }
+      ]
+    }
+  ]
+}

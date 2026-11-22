@@ -1,0 +1,136 @@
+{
+  "numero_pedido": "DIA-2026-0105",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 12.1319,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0105",
+    "matricula": "206230",
+    "quantidade_diarias": 2.5,
+    "valor_total": 700.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado e compatível: matrícula 206230, cargo Analista de Meio Ambiente, grupo B, unidade CFA e sede em Cuiabá."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados número do pedido, matrícula, datas, destino, transporte e justificativa."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "nao_atende",
+        "detalhe": "O pedido foi protocolado com 4 dias corridos de antecedência, abaixo do mínimo de 10 dias. Não foi apresentada autorização expressa e escrita do Secretário Adjunto que caracterize urgência nos termos normativos."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não há prestação de contas vencida para a servidora."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "O total projetado para outubro de 2026 é de 2,5 diárias, dentro do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo suficiente na dotação da unidade: R$ 9.250,00 disponíveis para despesa de R$ 700,00."
+      }
+    ],
+    "recomendacao": "diligencia",
+    "exige_autorizacao_superior": true,
+    "pendencias": [
+      "Apresentar autorização expressa e escrita do Secretário Adjunto, registrada no processo, caso se pretenda enquadrar o pedido como urgente.",
+      "Regularizar a antecedência inferior ao mínimo normativo mediante comprovação de situação emergencial imprevisível, se aplicável."
+    ],
+    "alertas": [
+      "A instrução não substitui a autorização do ordenador de despesa.",
+      "A justificativa do solicitante foi considerada apenas como declaração, sem substituir documentos ou autorizações formais."
+    ],
+    "minuta_despacho": "Encaminhe-se o pedido DIA-2026-0105 à diligência para apresentação de autorização expressa e escrita do Secretário Adjunto, registrada no processo, e de comprovação de situação emergencial imprevisível que justifique a antecedência de 4 dias, inferior ao mínimo de 10 dias corridos previsto no art. 5º da IN SEMA nº 07/2026. Registra-se que os demais critérios verificados atendem aos requisitos: cadastro compatível, dados informados, limite mensal, prestação de contas e saldo orçamentário. Após o saneamento, retornem os autos para análise e decisão do ordenador de despesa."
+  },
+  "auditoria_ferramentas": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_orcamento",
+      "verificar_prestacoes"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_0017472b67ed6380006b006efc898487d1b9d723f68e93d76b",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '206230', 'nome': 'Fernanda Lopes Martins', 'cargo': 'Analista de Meio Ambiente', 'grupo_diaria': 'B', 'unidade': 'CFA', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000002C2221603B0>",
+          "start_time": 1795190525.005581,
+          "end_time": 1795190525.0064452,
+          "duration": 0.0008642000611871481
+        }
+      },
+      {
+        "tool_call_id": "fc_0017472b67ed6380006b006efde3d487d1ad516423a0b7cae4",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '206230', 'grupo_diaria': 'B', 'categoria_destino': 'interior_mt', 'data_partida': '2026-10-13', 'data_retorno': '2026-10-15', 'quantidade_diarias': 2.5, 'valor_unitario': 280.0, 'valor_total': 700.0, 'antecedencia_dias': 4, 'antecedencia_atendida': False, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 2.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000002C222160380>",
+          "start_time": 1795190526.3687656,
+          "end_time": 1795190526.3704214,
+          "duration": 0.0016556999180465937
+        }
+      },
+      {
+        "tool_call_id": "fc_0017472b67ed6380006b006eff2e6c87d19939fe45b443c685",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '206230', 'unidade': 'CFA', 'nome_unidade': 'Coordenadoria de Fiscalização de Fauna', 'saldo_disponivel': 9250.0, 'valor_solicitado': 700.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 8550.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000002C222160350>",
+          "start_time": 1795190527.7093704,
+          "end_time": 1795190527.711253,
+          "duration": 0.0018826001323759556
+        }
+      },
+      {
+        "tool_call_id": "fc_0017472b67ed6380006b006f00b32087d1b65165ad9cfd3b40",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '206230', 'mes_referencia': '2026-10', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': []}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000002C222160320>",
+          "start_time": 1795190529.1174538,
+          "end_time": 1795190529.1197064,
+          "duration": 0.002252599922940135
+        }
+      }
+    ]
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0105",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "metricas": {
+    "input_tokens": 9205,
+    "output_tokens": 655,
+    "total_tokens": 9860,
+    "cache_read_tokens": 8481,
+    "cache_write_tokens": 709,
+    "reasoning_tokens": 0,
+    "cost": null,
+    "duration": 12.129170299973339,
+    "time_to_first_token": 2.324797200039029
+  },
+  "aprovado_para_revisao_humana": true
+}

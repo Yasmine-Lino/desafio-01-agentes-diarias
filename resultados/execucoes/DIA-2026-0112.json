@@ -1,0 +1,67 @@
+{
+  "numero_pedido": "DIA-2026-0112",
+  "tipo_execucao": "diligencia_preliminar",
+  "modelo": null,
+  "duracao_segundos": null,
+  "status": "diligencia_preliminar_concluida",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0112",
+    "matricula": "207481",
+    "quantidade_diarias": null,
+    "valor_total": null,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "nao_atende",
+        "detalhe": "Ha inconsistencia cadastral que exige saneamento."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "nao_atende",
+        "detalhe": "Nome informado diverge do cadastro da matricula."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "nao_verificado",
+        "detalhe": "Analise de merito suspensa ate a regularizacao dos dados preliminares."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "nao_verificado",
+        "detalhe": "Analise de merito suspensa ate a regularizacao dos dados preliminares."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "nao_verificado",
+        "detalhe": "Analise de merito suspensa ate a regularizacao dos dados preliminares."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "nao_verificado",
+        "detalhe": "Analise de merito suspensa ate a regularizacao dos dados preliminares."
+      }
+    ],
+    "recomendacao": "diligencia",
+    "exige_autorizacao_superior": false,
+    "pendencias": [
+      "Nome informado diverge do cadastro da matricula."
+    ],
+    "alertas": [
+      "Analise de merito nao realizada.",
+      "Nao houve calculo ou autorizacao de diarias.",
+      "A decisao final cabe ao ordenador de despesa."
+    ],
+    "minuta_despacho": "Em analise preliminar do pedido DIA-2026-0112, foram identificadas as seguintes pendencias: Nome informado diverge do cadastro da matricula.. Restituam-se os autos para complementacao ou correcao das informacoes. Apos o saneamento, realize-se nova analise de merito. Esta instrucao nao constitui autorizacao de concessao ou pagamento."
+  },
+  "auditoria_ferramentas": {
+    "chamadas": []
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0112",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Diligencia preliminar validada."
+  },
+  "metricas": null,
+  "aprovado_para_revisao_humana": true
+}

@@ -1,0 +1,132 @@
+{
+  "numero_pedido": "DIA-2026-0102",
+  "modelo": "gpt-5.6-luna",
+  "duracao_segundos": 10.2269,
+  "status": "RunStatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0102",
+    "matricula": "205882",
+    "quantidade_diarias": 3.5,
+    "valor_total": 770.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro localizado para a matrícula 205882; servidor ocupante do cargo de Motorista, grupo C, lotado na unidade CFF, com sede em Cuiabá. Destino em Sinop/MT é compatível com a categoria Interior de MT."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "Foram informados número do pedido, matrícula, datas de partida e retorno, destino, unidade federativa e meio de transporte. Não foram identificadas divergências cadastrais."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "O pedido foi protocolado com 31 dias de antecedência, atendendo ao mínimo de 10 dias corridos. Não se aplica exigência de autorização superior por urgência."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não há prestação de contas vencida para a matrícula consultada. A prestação referente ao pedido DIA-2026-0041 ainda está dentro do prazo informado."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "O pedido totaliza 3,5 diárias no mês da partida, abaixo do limite mensal de 10 diárias. Não há diárias anteriores contabilizadas no mês."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo suficiente na dotação da unidade CFF: R$ 18.400,00 disponíveis, diante de R$ 770,00 solicitados."
+      }
+    ],
+    "recomendacao": "apto_para_autorizacao",
+    "exige_autorizacao_superior": false,
+    "pendencias": [],
+    "alertas": [
+      "A recomendação é técnica e não substitui a autorização do ordenador de despesa."
+    ],
+    "minuta_despacho": "À consideração do ordenador de despesa. A instrução técnica do pedido DIA-2026-0102 atende aos requisitos cadastrais, de completude, antecedência, prestação de contas, limite mensal e disponibilidade orçamentária. O deslocamento de 09/11/2026 a 12/11/2026 corresponde a 3,5 diárias, no valor total de R$ 770,00, conforme cálculo oficial. Submeta-se à decisão da autoridade competente."
+  },
+  "auditoria_ferramentas": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_orcamento",
+      "verificar_prestacoes"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_013219685be79120006b00a43d7d8887d1b6421b5f414f6ca6",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '205882', 'nome': 'Marcos Antônio Rezende', 'cargo': 'Motorista', 'grupo_diaria': 'C', 'unidade': 'CFF', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000025177B86030>",
+          "start_time": 1795204157.9563308,
+          "end_time": 1795204157.9571962,
+          "duration": 0.0008654000703245401
+        }
+      },
+      {
+        "tool_call_id": "fc_013219685be79120006b00a43e97f487d18370fdd8df1bcdb8",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '205882', 'grupo_diaria': 'C', 'categoria_destino': 'interior_mt', 'data_partida': '2026-11-09', 'data_retorno': '2026-11-12', 'quantidade_diarias': 3.5, 'valor_unitario': 220.0, 'valor_total': 770.0, 'antecedencia_dias': 31, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 3.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000025177B86000>",
+          "start_time": 1795204158.9601486,
+          "end_time": 1795204158.9618332,
+          "duration": 0.0016846000216901302
+        }
+      },
+      {
+        "tool_call_id": "fc_013219685be79120006b00a43fb6d087d1922bde147c08a827",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '205882', 'unidade': 'CFF', 'nome_unidade': 'Coordenadoria de Fiscalização de Flora', 'saldo_disponivel': 18400.0, 'valor_solicitado': 770.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 17630.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000025177B85FD0>",
+          "start_time": 1795204160.0830474,
+          "end_time": 1795204160.0852122,
+          "duration": 0.0021648998372256756
+        }
+      },
+      {
+        "tool_call_id": "fc_013219685be79120006b00a44150e087d193441f742f96888c",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '205882', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': [{'pedido': 'DIA-2026-0041', 'data_partida': '2026-10-01', 'data_retorno': '2026-10-06', 'quantidade': 5.5, 'prestacao_contas': 'pendente', 'prazo_prestacao': '2026-10-13', 'prestacao_vencida': False}]}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x0000025177B85FA0>",
+          "start_time": 1795204161.7122138,
+          "end_time": 1795204161.7132008,
+          "duration": 0.0009870999492704868
+        }
+      }
+    ]
+  },
+  "barreira_validacao": {
+    "numero_pedido": "DIA-2026-0102",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "metricas": {
+    "input_tokens": 10742,
+    "output_tokens": 604,
+    "total_tokens": 11346,
+    "cache_read_tokens": 9944,
+    "cache_write_tokens": 783,
+    "reasoning_tokens": 0,
+    "cost": null,
+    "duration": 10.22421730007045,
+    "time_to_first_token": 1.489051200216636
+  },
+  "aprovado_para_revisao_humana": true
+}

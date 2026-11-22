@@ -1,0 +1,124 @@
+{
+  "numero_pedido": "DIA-2026-0111",
+  "tipo_execucao": "complementacao_com_memoria",
+  "duracao_segundos": 10.923,
+  "status": "runstatus.completed",
+  "instrucao": {
+    "numero_pedido": "DIA-2026-0111",
+    "matricula": "206689",
+    "quantidade_diarias": 3.5,
+    "valor_total": 980.0,
+    "verificacoes": [
+      {
+        "criterio": "cadastro",
+        "situacao": "atende",
+        "detalhe": "Cadastro funcional localizado e compatível: matrícula 206689, cargo Fiscal Ambiental, grupo B e unidade CFF."
+      },
+      {
+        "criterio": "dados_completos",
+        "situacao": "atende",
+        "detalhe": "A complementação formal informa que o retorno está previsto para 20/11/2026, compatibilizando os dados do pedido e permitindo o cálculo das diárias."
+      },
+      {
+        "criterio": "antecedencia",
+        "situacao": "atende",
+        "detalhe": "A antecedência calculada é de 39 dias corridos, superior ao mínimo normativo de 10 dias."
+      },
+      {
+        "criterio": "prestacao_contas",
+        "situacao": "atende",
+        "detalhe": "Não há prestação de contas vencida para a servidora."
+      },
+      {
+        "criterio": "limite_mensal",
+        "situacao": "atende",
+        "detalhe": "O total projetado para novembro é de 3,5 diárias, dentro do limite mensal de 10 diárias."
+      },
+      {
+        "criterio": "saldo_orcamentario",
+        "situacao": "atende",
+        "detalhe": "Há saldo suficiente na unidade CFF: R$ 18.400,00 disponíveis, com saldo projetado de R$ 17.420,00 após a solicitação de R$ 980,00."
+      }
+    ],
+    "recomendacao": "apto_para_autorizacao",
+    "exige_autorizacao_superior": false,
+    "pendencias": [],
+    "alertas": [
+      "A complementação foi considerada para sanar a diligência relativa à data de retorno.",
+      "A instrução não substitui a autorização formal do ordenador de despesa, a quem cabe deferir ou indeferir o pedido.",
+      "A justificativa sobre a operação não foi utilizada para dispensar verificações normativas."
+    ],
+    "minuta_despacho": "Considerando a complementação formal apresentada e as verificações realizadas, conclui-se pelo atendimento dos requisitos previstos na Instrução Normativa SEMA nº 07/2026. Encaminhe-se ao ordenador de despesa para decisão quanto ao deferimento ou indeferimento, sem que a presente instrução constitua autorização de pagamento ou concessão de diária."
+  },
+  "auditoria": {
+    "total_chamadas": 4,
+    "nomes_ferramentas": [
+      "verificar_cadastro",
+      "verificar_calculo",
+      "verificar_prestacoes",
+      "verificar_orcamento"
+    ],
+    "chamadas": [
+      {
+        "tool_call_id": "fc_01684ecf8cca0618006b0087aeae7c87d[CPF_PROTEGIDO]f23574",
+        "nome": "verificar_cadastro",
+        "argumentos": {},
+        "resultado": "{'encontrado': True, 'matricula': '206689', 'nome': 'Beatriz Moraes Cunha', 'cargo': 'Fiscal Ambiental', 'grupo_diaria': 'B', 'unidade': 'CFF', 'municipio_sede': 'Cuiabá'}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001B442BAABA0>",
+          "start_time": 1795196847.175768,
+          "end_time": 1795196847.1767669,
+          "duration": 0.000998999923467636
+        }
+      },
+      {
+        "tool_call_id": "fc_01684ecf8cca0618006b0087afee5c87d1a5e35bb30a79871c",
+        "nome": "verificar_calculo",
+        "argumentos": {},
+        "resultado": "{'matricula': '206689', 'grupo_diaria': 'B', 'categoria_destino': 'interior_mt', 'data_partida': '2026-11-17', 'data_retorno': '2026-11-20', 'quantidade_diarias': 3.5, 'valor_unitario': 280.0, 'valor_total': 980.0, 'antecedencia_dias': 39, 'antecedencia_atendida': True, 'diarias_anteriores_mes': 0.0, 'total_projetado_mes': 3.5, 'limite_mensal': 10.0, 'limite_mensal_atendido': True}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001B442BAAB70>",
+          "start_time": 1795196848.2998564,
+          "end_time": 1795196848.3024528,
+          "duration": 0.0025963999796658754
+        }
+      },
+      {
+        "tool_call_id": "fc_01684ecf8cca0618006b0087b1110c87d19e181b167bc25ecc",
+        "nome": "verificar_prestacoes",
+        "argumentos": {},
+        "resultado": "{'matricula': '206689', 'mes_referencia': '2026-11', 'data_analise': '2026-10-09', 'total_diarias_mes': 0.0, 'possui_prestacao_vencida': False, 'pedidos_vencidos': [], 'registros': [{'pedido': 'DIA-2026-0037', 'data_partida': '2026-09-29', 'data_retorno': '2026-10-01', 'quantidade': 2.5, 'prestacao_contas': 'entregue', 'prazo_prestacao': '2026-10-08', 'prestacao_vencida': False}]}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001B442BAA990>",
+          "start_time": 1795196849.5133479,
+          "end_time": 1795196849.5148177,
+          "duration": 0.001469900133088231
+        }
+      },
+      {
+        "tool_call_id": "fc_01684ecf8cca0618006b0087b2648087d18495e8ca47980b4f",
+        "nome": "verificar_orcamento",
+        "argumentos": {},
+        "resultado": "{'matricula': '206689', 'unidade': 'CFF', 'nome_unidade': 'Coordenadoria de Fiscalização de Flora', 'saldo_disponivel': 18400.0, 'valor_solicitado': 980.0, 'saldo_suficiente': True, 'saldo_apos_solicitacao': 17420.0}",
+        "erro": false,
+        "metricas": {
+          "timer": "<agno.utils.timer.Timer object at 0x000001B442BAABD0>",
+          "start_time": 1795196850.7674382,
+          "end_time": 1795196850.7695873,
+          "duration": 0.0021490000654011965
+        }
+      }
+    ]
+  },
+  "validacao": {
+    "numero_pedido": "DIA-2026-0111",
+    "aprovado": true,
+    "erros": [],
+    "mensagem": "Instrucao validada."
+  },
+  "historico_preservado": true,
+  "usuario_preservado": true
+}

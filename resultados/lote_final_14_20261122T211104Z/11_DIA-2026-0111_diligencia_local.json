@@ -1,0 +1,21 @@
+{
+  "caso": "DIA-2026-0111/diligencia_local",
+  "protocolo": "DIA-2026-0111",
+  "etapa": "diligencia_local",
+  "status": "conferida",
+  "tipo_execucao": "diligencia_preliminar",
+  "modelo_invocado": false,
+  "session_id": "DIA-2026-0111",
+  "titular_validado": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "total_tokens": 0,
+  "duracao_segundos": 0.001644,
+  "custo_estimado_usd": "0E-8",
+  "custo_faturado_usd": null,
+  "barreira": "aprovada",
+  "revisao_humana_obrigatoria": true,
+  "correcao_validada": null,
+  "sessao_original_preservada": null,
+  "titular_corrigido_utilizado": null
+}

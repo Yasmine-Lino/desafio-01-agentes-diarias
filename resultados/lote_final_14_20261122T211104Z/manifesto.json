@@ -1,0 +1,62 @@
+{
+  "versao": 1,
+  "inicio_utc": "2026-11-22T21:11:04.682433+00:00",
+  "sequencia_esperada": [
+    "DIA-2026-0101",
+    "DIA-2026-0102",
+    "DIA-2026-0103",
+    "DIA-2026-0104",
+    "DIA-2026-0105",
+    "DIA-2026-0106",
+    "DIA-2026-0107",
+    "DIA-2026-0108",
+    "DIA-2026-0109",
+    "DIA-2026-0110",
+    "DIA-2026-0111/diligencia_local",
+    "DIA-2026-0111/complementacao",
+    "DIA-2026-0112/diligencia_local",
+    "DIA-2026-0112/complementacao"
+  ],
+  "casos": [
+    "DIA-2026-0101",
+    "DIA-2026-0102",
+    "DIA-2026-0103",
+    "DIA-2026-0104",
+    "DIA-2026-0105",
+    "DIA-2026-0106",
+    "DIA-2026-0107",
+    "DIA-2026-0108",
+    "DIA-2026-0109",
+    "DIA-2026-0110",
+    "DIA-2026-0111/diligencia_local",
+    "DIA-2026-0111/complementacao",
+    "DIA-2026-0112/diligencia_local",
+    "DIA-2026-0112/complementacao"
+  ],
+  "tarifa": {
+    "fonte": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "consulta": "2026-11-22",
+    "usd_por_milhao": {
+      "entrada": "0.20",
+      "entrada_cache": "0.02",
+      "escrita_cache": "0.25",
+      "saida": "1.20"
+    }
+  },
+  "custos_faturados_disponiveis": false,
+  "estado": "concluido",
+  "metricas": {
+    "casos_concluidos": 14,
+    "casos_esperados": 14,
+    "chamadas_logicas_ao_modelo": 12,
+    "metricas_completas": true,
+    "input_tokens": 140102,
+    "output_tokens": 7151,
+    "total_tokens": 147253,
+    "duracao_total_segundos": 121.465325,
+    "custo_estimado_usd": "0.01246789",
+    "custo_faturado_usd": null,
+    "estado": "concluido"
+  },
+  "fim_utc": "2026-11-22T21:13:06.147863+00:00"
+}

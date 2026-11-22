@@ -1,0 +1,293 @@
+{
+  "pedido": "DIA-2026-0112",
+  "cenario": "A",
+  "modelo": "gpt-5.6-luna",
+  "configuracao": {
+    "historico": false,
+    "limite_runs": 0,
+    "memoria_pessoal": false
+  },
+  "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+  "turnos": [
+    {
+      "tipo": "diligencia_local",
+      "status": "conferido",
+      "session_id": "DIA-2026-0112",
+      "user_id": null,
+      "chamadas_ao_modelo": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "segundos": 0.21678,
+      "recomendacao": "diligencia",
+      "verificacoes": [
+        {
+          "criterio": "cadastro",
+          "situacao": "nao_atende"
+        },
+        {
+          "criterio": "dados_completos",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "antecedencia",
+          "situacao": "nao_verificado"
+        },
+        {
+          "criterio": "prestacao_contas",
+          "situacao": "nao_verificado"
+        },
+        {
+          "criterio": "limite_mensal",
+          "situacao": "nao_verificado"
+        },
+        {
+          "criterio": "saldo_orcamentario",
+          "situacao": "nao_verificado"
+        }
+      ],
+      "correcao_recuperada": null,
+      "barreira": "aprovada",
+      "contexto": [],
+      "requisicoes": [],
+      "custo_estimado_usd": null,
+      "custo_faturado_usd": null,
+      "situacao_custo": "sem_chamada",
+      "situacao_original": "divergencia_cadastral"
+    },
+    {
+      "tipo": "retomada_com_modelo",
+      "status": "conferido",
+      "session_id": "DIA-2026-0112",
+      "user_id": "207418",
+      "chamadas_ao_modelo": 5,
+      "input_tokens": 11260,
+      "output_tokens": 554,
+      "total_tokens": 11814,
+      "segundos": 8.432,
+      "recomendacao": "apto_para_autorizacao",
+      "verificacoes": [
+        {
+          "criterio": "cadastro",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "dados_completos",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "antecedencia",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "prestacao_contas",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "limite_mensal",
+          "situacao": "atende"
+        },
+        {
+          "criterio": "saldo_orcamentario",
+          "situacao": "atende"
+        }
+      ],
+      "correcao_recuperada": {
+        "campo": "matricula",
+        "valor_validado": "207418"
+      },
+      "barreira": "aprovada",
+      "contexto": [
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0112",
+            "matricula": "207418",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-24",
+            "data_retorno": "2026-11-27"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "divergencia_cadastral",
+            "matricula_corrigida_e_validada": true,
+            "titular_atual_conferido_no_cadastro": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1,
+            "assistant": 1,
+            "tool": 1
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0112",
+            "matricula": "207418",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-24",
+            "data_retorno": "2026-11-27"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "divergencia_cadastral",
+            "matricula_corrigida_e_validada": true,
+            "titular_atual_conferido_no_cadastro": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1,
+            "assistant": 2,
+            "tool": 2
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0112",
+            "matricula": "207418",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-24",
+            "data_retorno": "2026-11-27"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "divergencia_cadastral",
+            "matricula_corrigida_e_validada": true,
+            "titular_atual_conferido_no_cadastro": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1,
+            "assistant": 3,
+            "tool": 3
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0112",
+            "matricula": "207418",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-24",
+            "data_retorno": "2026-11-27"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "divergencia_cadastral",
+            "matricula_corrigida_e_validada": true,
+            "titular_atual_conferido_no_cadastro": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        },
+        {
+          "finalidade": "analise",
+          "papeis": {
+            "system": 1,
+            "user": 1,
+            "assistant": 4,
+            "tool": 4
+          },
+          "mensagens_de_replay": 0,
+          "memoria_pessoal_no_sistema": false,
+          "entrada_operacional": {
+            "numero": "DIA-2026-0112",
+            "matricula": "207418",
+            "data_pedido": "2026-10-09",
+            "data_partida": "2026-11-24",
+            "data_retorno": "2026-11-27"
+          },
+          "resumo_administrativo": {
+            "motivo_diligencia": "divergencia_cadastral",
+            "matricula_corrigida_e_validada": true,
+            "titular_atual_conferido_no_cadastro": true
+          },
+          "justificativa_presente": false,
+          "payload_verificado": true
+        }
+      ],
+      "requisicoes": [
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2026,
+            "output_tokens": 16,
+            "total_tokens": 2042,
+            "cached_tokens": 1852,
+            "cache_write_tokens": 171
+          }
+        },
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2116,
+            "output_tokens": 17,
+            "total_tokens": 2133,
+            "cached_tokens": 2023,
+            "cache_write_tokens": 90
+          }
+        },
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2217,
+            "output_tokens": 16,
+            "total_tokens": 2233,
+            "cached_tokens": 2113,
+            "cache_write_tokens": 101
+          }
+        },
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2396,
+            "output_tokens": 17,
+            "total_tokens": 2413,
+            "cached_tokens": 2214,
+            "cache_write_tokens": 179
+          }
+        },
+        {
+          "finalidade": "analise",
+          "http_status": 200,
+          "metricas": {
+            "input_tokens": 2505,
+            "output_tokens": 488,
+            "total_tokens": 2993,
+            "cached_tokens": 2393,
+            "cache_write_tokens": 109
+          }
+        }
+      ],
+      "custo_estimado_usd": "0.00104220",
+      "custo_faturado_usd": null,
+      "situacao_custo": "estimado",
+      "runs_persistidos": 0,
+      "memorias_persistidas": 0,
+      "chamadas_por_finalidade": {
+        "analise": 5
+      },
+      "falhas_no_modelo": []
+    }
+  ]
+}

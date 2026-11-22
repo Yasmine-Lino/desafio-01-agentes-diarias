@@ -1,0 +1,14 @@
+Desafio 01 — Etapa 8.9
+Autora: Yasmine Lino Franco
+
+Comando: .venv\Scripts\python.exe -B -X utf8 testes\testar_ferramentas.py
+Fonte: dados/pedidos.json e consultas determinísticas do projeto.
+Escopo: casos do acervo oficial, sem agente, API, SQLite ou gabarito.
+
+OK | 0112 | Matrícula original pertence a cadastro divergente.
+OK | 0108 | Prestação de contas vencida.
+OK | 0103 | Quantidade calculada: 0.5.
+OK | 0110 | Valor pedido: 1800.0; saldo disponível: 640.0.
+RESULTADO ACERVO: 4/4
+
+Código de saída: 0

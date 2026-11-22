@@ -1,0 +1,10 @@
+{
+  "total_casos": 14,
+  "casos_disponiveis": 14,
+  "casos_integralmente_corretos": 8,
+  "acuracia_integral_percentual": 57.14,
+  "campos_corretos": 61,
+  "campos_avaliados": 70,
+  "acuracia_por_campo_percentual": 87.14,
+  "nota_publicacao": "Resultados individuais e comparacoes com o gabarito omitidos da versao publica. Evidencias completas preservadas exclusivamente no projeto original."
+}

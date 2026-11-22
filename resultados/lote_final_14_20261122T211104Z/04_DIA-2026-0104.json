@@ -1,0 +1,21 @@
+{
+  "caso": "DIA-2026-0104",
+  "protocolo": "DIA-2026-0104",
+  "etapa": "analise",
+  "status": "conferida",
+  "tipo_execucao": "analise_merito",
+  "modelo_invocado": true,
+  "session_id": "DIA-2026-0104",
+  "titular_validado": true,
+  "input_tokens": 11727,
+  "output_tokens": 609,
+  "total_tokens": 12336,
+  "duracao_segundos": 9.040408,
+  "custo_estimado_usd": "0.00096804",
+  "custo_faturado_usd": null,
+  "barreira": "aprovada",
+  "revisao_humana_obrigatoria": true,
+  "correcao_validada": null,
+  "sessao_original_preservada": null,
+  "titular_corrigido_utilizado": null
+}

@@ -1,0 +1,21 @@
+{
+  "caso": "DIA-2026-0112/complementacao",
+  "protocolo": "DIA-2026-0112",
+  "etapa": "complementacao",
+  "status": "conferida",
+  "tipo_execucao": "analise_merito",
+  "modelo_invocado": true,
+  "session_id": "DIA-2026-0112",
+  "titular_validado": true,
+  "input_tokens": 11260,
+  "output_tokens": 572,
+  "total_tokens": 11832,
+  "duracao_segundos": 9.712941,
+  "custo_estimado_usd": "0.00106380",
+  "custo_faturado_usd": null,
+  "barreira": "aprovada",
+  "revisao_humana_obrigatoria": true,
+  "correcao_validada": true,
+  "sessao_original_preservada": true,
+  "titular_corrigido_utilizado": true
+}

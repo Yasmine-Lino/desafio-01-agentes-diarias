@@ -1,0 +1,54 @@
+{
+  "pedido": "DIA-2026-0112",
+  "cenario": "A",
+  "modelo": "gpt-5.6-luna",
+  "configuracao": {
+    "historico": false,
+    "limite_runs": 0,
+    "memoria_pessoal": false
+  },
+  "isolamento": "SQLite e chave HMAC temporários exclusivos da combinação",
+  "turnos": [
+    {
+      "tipo": "diligencia_local",
+      "status": "nao_executado",
+      "session_id": null,
+      "user_id": null,
+      "chamadas_ao_modelo": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "segundos": null,
+      "recomendacao": null,
+      "verificacoes": [],
+      "correcao_recuperada": null,
+      "barreira": "nao_avaliada",
+      "contexto": [],
+      "requisicoes": [],
+      "custo_estimado_usd": null,
+      "custo_faturado_usd": null,
+      "situacao_custo": "nao_disponivel"
+    },
+    {
+      "tipo": "retomada_com_modelo",
+      "status": "nao_executado",
+      "session_id": null,
+      "user_id": null,
+      "chamadas_ao_modelo": 0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "segundos": null,
+      "recomendacao": null,
+      "verificacoes": [],
+      "correcao_recuperada": null,
+      "barreira": "nao_avaliada",
+      "contexto": [],
+      "requisicoes": [],
+      "custo_estimado_usd": null,
+      "custo_faturado_usd": null,
+      "situacao_custo": "nao_disponivel"
+    }
+  ],
+  "motivo_nao_executado": "falha_de_transporte_ou_conexao"
+}

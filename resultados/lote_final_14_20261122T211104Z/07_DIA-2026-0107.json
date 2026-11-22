@@ -1,0 +1,21 @@
+{
+  "caso": "DIA-2026-0107",
+  "protocolo": "DIA-2026-0107",
+  "etapa": "analise",
+  "status": "conferida",
+  "tipo_execucao": "analise_merito",
+  "modelo_invocado": true,
+  "session_id": "DIA-2026-0107",
+  "titular_validado": true,
+  "input_tokens": 11792,
+  "output_tokens": 648,
+  "total_tokens": 12440,
+  "duracao_segundos": 9.675392,
+  "custo_estimado_usd": "0.00119025",
+  "custo_faturado_usd": null,
+  "barreira": "aprovada",
+  "revisao_humana_obrigatoria": true,
+  "correcao_validada": null,
+  "sessao_original_preservada": null,
+  "titular_corrigido_utilizado": null
+}
