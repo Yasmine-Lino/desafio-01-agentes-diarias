@@ -225,7 +225,7 @@ históricas nem altera os resultados anteriores.
 
 O protótipo demonstrou instrução estruturada com consultas auditadas e recuperação das duas complementações. A terceira rodada chegou a 13/14 casos integrais, com 68/70 campos coincidentes e aprovação técnica de 14/14 pela barreira. A divergência de 0106 segue documentada. A avaliação histórica, a rodada de memória, os testes simulados e as estimativas medem aspectos diferentes. O ponto de conferência humana permanece antes da decisão administrativa.
 
-Para a entrega, falta a revisão final do conteúdo do repositório ou ZIP e a publicação autorizada. A validação OIDC de ponta a ponta requer um provedor real configurado.
+O repositório foi publicado no GitHub, na branch main, com as atualizações e evidências finais. A geração e a conferência do ZIP de entrega permanecem pendentes. A validação OIDC de ponta a ponta requer um provedor real configurado.
 
 ---
 
