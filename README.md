@@ -6,7 +6,7 @@ O projeto simula a instrução de 12 pedidos de diárias da SEMA-MT e duas compl
 
 ## Como começar
 
-Siga o [LEIA-ME](LEIA-ME.md) para preparar o PowerShell, instalar as dependências, rodar os testes offline e configurar a interface Streamlit. As operações protegidas exigem autenticação OIDC e configuração do servidor.
+Siga o [LEIA-ME](LEIA-ME.md) para instalar e executar o projeto no Windows (PowerShell), Linux (Bash) ou macOS (zsh/Bash), configurar a API, executar os testes offline e preparar a interface Streamlit. O ambiente foi validado no Windows; os comandos para Linux e macOS ainda precisam de validação nessas plataformas. As operações protegidas exigem autenticação OIDC e configuração do servidor.
 
 ## Documentação e evidências
 

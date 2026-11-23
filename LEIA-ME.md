@@ -2,18 +2,20 @@
 
 Projeto individual de **Yasmine Lino Franco** ([Yasmine-Lino](https://github.com/Yasmine-Lino)).
 
-## Instalação no Windows com PowerShell
+## Requisitos e instalação
 
-O ambiente conferido usa **Python 3.12.10**. A combinação fixada em [requirements.txt](requirements.txt) exige Python 3.11 ou superior por causa de Streamlit e SQLAlchemy. As versões principais são Agno 3.2.1 e Streamlit 1.67.0. O arquivo também fixa OpenAI, Pydantic, python-dotenv e `sqlalchemy[asyncio]`. O extra `asyncio` inclui Greenlet para a persistência do Agno. O HTTPX é fornecido pelas dependências do Agno e foi conferido na versão 0.28.1.
+O projeto foi desenvolvido e conferido no Windows com **Python 3.12.10**. Recomenda-se Python 3.12 para reproduzir o ambiente. As dependências estão fixadas em [requirements.txt](requirements.txt), incluindo Agno 3.2.1, Streamlit 1.67.0, OpenAI, Pydantic, python-dotenv e SQLAlchemy com suporte assíncrono.
 
-Na raiz do projeto, com Python 3.12 disponível no iniciador do Windows:
+As instruções para Linux e macOS são equivalentes, mas ainda não foram validadas nesses sistemas. Execute os comandos a partir da raiz do projeto.
+
+### Windows — PowerShell
 
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-Os testes abaixo usam dados hipotéticos e dispensam chave da API:
+Testes offline:
 
 ```powershell
 .\.venv\Scripts\python.exe -B -X utf8 testes\testar_ferramentas.py
@@ -22,24 +24,99 @@ Os testes abaixo usam dados hipotéticos e dispensam chave da API:
 .\.venv\Scripts\python.exe -B -X utf8 testes\auditar_evidencias_historicas.py
 ```
 
-Para usar o modelo real, copie [.env.example](.env.example) para `.env` e preencha localmente `OPENAI_API_KEY`. O agente lê a configuração com `load_dotenv`. O comando a seguir usa a API e pode gerar custo e gravar resultados de execução. Use uma cópia de trabalho separada das evidências entregues.
+### Linux — terminal Bash
+
+Instale Python 3.12, o módulo venv e o pip pelos meios apropriados à sua distribuição. Depois, na raiz do projeto:
+
+```bash
+python3.12 -m venv .venv
+./.venv/bin/python -m pip install -r requirements.txt
+```
+
+Testes offline:
+
+```bash
+./.venv/bin/python -B -X utf8 testes/testar_ferramentas.py
+./.venv/bin/python -B -X utf8 testes/testar_experimento_memoria_complementacoes_offline.py
+./.venv/bin/python -B -X utf8 testes/testar_transporte_experimento_offline.py
+./.venv/bin/python -B -X utf8 testes/auditar_evidencias_historicas.py
+```
+
+### macOS — terminal zsh ou Bash
+
+Instale Python 3.12 e confirme que o comando `python3.12` está disponível. Na raiz do projeto:
+
+```bash
+python3.12 -m venv .venv
+./.venv/bin/python -m pip install -r requirements.txt
+```
+
+Testes offline:
+
+```bash
+./.venv/bin/python -B -X utf8 testes/testar_ferramentas.py
+./.venv/bin/python -B -X utf8 testes/testar_experimento_memoria_complementacoes_offline.py
+./.venv/bin/python -B -X utf8 testes/testar_transporte_experimento_offline.py
+./.venv/bin/python -B -X utf8 testes/auditar_evidencias_historicas.py
+```
+
+## Configuração e execução com modelo real
+
+Copie [.env.example](.env.example) para `.env` e configure localmente a variável `OPENAI_API_KEY`. Nunca publique `.env` ou credenciais. A execução real utiliza a API OpenAI, pode gerar custos e gravar resultados. Para preservar as evidências da entrega, utilize uma cópia de trabalho separada.
+
+**Windows — PowerShell:**
 
 ```powershell
+Copy-Item .env.example .env
+# Edite .env localmente e informe sua chave.
 .\.venv\Scripts\python.exe testes\executar_pedido.py DIA-2026-0102
 ```
 
+**Linux e macOS:**
+
+```bash
+cp .env.example .env
+# Edite .env localmente e informe sua chave.
+./.venv/bin/python testes/executar_pedido.py DIA-2026-0102
+```
+
+A execução sem chave válida não deve ser considerada um teste real do modelo. Os testes offline verificam componentes isolados e não substituem a validação de ponta a ponta.
 ## Interface autenticada
 
-Instale o extra de autenticação da versão fixada: `.\.venv\Scripts\python.exe -m pip install "streamlit[auth]==1.67.0"`. Configure um provedor de identidade real e seus segredos na configuração privada de autenticação do Streamlit, com URI de retorno compatível com a implantação. Forneça ao processo do Streamlit estas duas variáveis pelo servidor:
+A interface Streamlit exige autenticação OIDC e configuração privada de um provedor de identidade. O extra de autenticação deve ser instalado na mesma versão fixada do Streamlit.
+
+**Windows — PowerShell:**
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install "streamlit[auth]==1.67.0"
+```
+
+**Linux e macOS:**
+
+```bash
+./.venv/bin/python -m pip install "streamlit[auth]==1.67.0"
+```
+
+Configure um provedor de identidade real e seus segredos na configuração privada de autenticação do Streamlit, com URI de retorno compatível com a implantação. Forneça ao processo do Streamlit estas duas variáveis pelo servidor:
 
 | Variável | Formato |
 |---|---|
 | `BARREIRA_HMAC_CHAVE_HEX` | Chave estável de 32 bytes em hexadecimal, 64 caracteres |
 | `TITULARES_OIDC_JSON` | Lista JSON de vínculos verificados com `iss`, `sub`, `matricula` e `protocolos` |
 
+**Iniciar no Windows — PowerShell:**
+
 ```powershell
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
+
+**Iniciar no Linux ou macOS:**
+
+```bash
+./.venv/bin/python -m streamlit run app.py
+```
+
+A inicialização não substitui a configuração do provedor OIDC. Sem autenticação e vínculos autorizados, as operações protegidas não estarão disponíveis. A integração com um provedor OIDC real ainda não foi validada.
 
 A interface exige identidade autenticada com validade vigente e vínculo de titular autorizado, inclusive para consultar históricos. O formulário de execução exibe progresso e permite complementar a diligência. A instrução conferida apresenta recomendação, seis verificações com fundamentos, consultas auditadas, alertas, pendências e minuta editável. O conferente registra seu encaminhamento e justifica divergências. Uma falha encaminha o caso à análise manual com mensagem padrão. A exclusão tem área própria e confirmação explícita. A proteção foi testada offline com identidade simulada. A integração com um provedor OIDC real permanece pendente.
 
