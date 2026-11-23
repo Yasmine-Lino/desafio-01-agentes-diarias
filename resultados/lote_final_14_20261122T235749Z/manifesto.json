@@ -1,0 +1,68 @@
+{
+  "versao": 2,
+  "finalidade": "lote final detalhado dos 12 pedidos e duas complementacoes; nova execucao isolada",
+  "inicio_utc": "2026-11-22T23:57:49.109118+00:00",
+  "sequencia_esperada": [
+    "DIA-2026-0101",
+    "DIA-2026-0102",
+    "DIA-2026-0103",
+    "DIA-2026-0104",
+    "DIA-2026-0105",
+    "DIA-2026-0106",
+    "DIA-2026-0107",
+    "DIA-2026-0108",
+    "DIA-2026-0109",
+    "DIA-2026-0110",
+    "DIA-2026-0111/diligencia_local",
+    "DIA-2026-0111/complementacao",
+    "DIA-2026-0112/diligencia_local",
+    "DIA-2026-0112/complementacao"
+  ],
+  "casos": [
+    "DIA-2026-0101"
+  ],
+  "tarifa": {
+    "fonte": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "consulta": "2026-11-22",
+    "usd_por_milhao": {
+      "entrada": "0.20",
+      "entrada_cache": "0.02",
+      "escrita_cache": "0.25",
+      "saida": "1.20"
+    }
+  },
+  "custos_faturados_disponiveis": false,
+  "metricas_duracao": {
+    "duracao_segundos": "tempo de executar_tentativa por caso; inclui validação e não isola o transporte HTTP",
+    "duracao_run_agno_segundos": "duração de run informada pelo Agno, incluindo interação com ferramentas",
+    "duracao_total_segundos": "tempo do orquestrador para o lote, incluindo preparação e checkpoints",
+    "diferenca_nao_atribuida_segundos": "diferença aritmética, não uma medição autônoma de orquestração"
+  },
+  "estado": "interrompido",
+  "metricas": {
+    "casos_registrados": 1,
+    "casos_concluidos": 0,
+    "casos_esperados": 14,
+    "chamadas_logicas_ao_modelo": 1,
+    "metricas_completas": false,
+    "casos_modelo_com_metricas_completas": 0,
+    "cache_decomposicao_completa": false,
+    "totais_tokens_consistentes": false,
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null,
+    "subtotal_input_tokens_casos_com_metricas": 0,
+    "subtotal_output_tokens_casos_com_metricas": 0,
+    "subtotal_total_tokens_casos_com_metricas": 0,
+    "cache_read_tokens": null,
+    "cache_write_tokens": null,
+    "duracao_casos_servico_segundos": 0.279339,
+    "diferenca_nao_atribuida_segundos": 2.577446,
+    "duracao_total_segundos": 2.856785,
+    "custo_estimado_usd": null,
+    "subtotal_custo_estimado_usd_casos_com_metricas": null,
+    "custo_faturado_usd": null,
+    "estado": "parcial"
+  },
+  "erro": "RuntimeError"
+}

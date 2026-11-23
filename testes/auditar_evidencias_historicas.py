@@ -95,6 +95,8 @@ def auditar() -> dict:
     com_recomendacao = 0
     com_auditoria_ferramentas = 0
     origem_duracao_executor = []
+    diligencias_sem_modelo = 0
+    execucoes_modelo_sem_tokens = []
 
     for linha in linhas:
         if not linha.startswith("| DIA-2026-"):
@@ -108,11 +110,18 @@ def auditar() -> dict:
             continue
         registro = json.loads(caminho.read_text(encoding="utf-8"))
         metricas = registro.get("metricas") or {}
+        diligencia_local = (
+            registro.get("tipo_execucao") == "diligencia_preliminar"
+            or registro.get("status") == "diligencia_preliminar_concluida"
+        )
+        diligencias_sem_modelo += int(diligencia_local)
         if all(metricas.get(k) is not None for k in
                ("input_tokens", "output_tokens", "total_tokens", "cache_read_tokens", "cache_write_tokens")):
             completos_tokens_cache += 1
         if all(metricas.get(k) is not None for k in ("input_tokens", "output_tokens", "total_tokens")):
             com_metricas_token += 1
+        elif not diligencia_local and registro.get("tipo_execucao", "").startswith("complementacao"):
+            execucoes_modelo_sem_tokens.append(nome)
         if _valor_origem(registro, "duration") is not None:
             com_duracao += 1
         if metricas.get("cost") is not None or registro.get("custo_estimado_usd") is not None:
@@ -127,7 +136,16 @@ def auditar() -> dict:
 
         valores = [_valor_origem(registro, coluna) for coluna in colunas]
         for indice, coluna in enumerate(colunas, start=1):
-            if indice >= len(celulas) or not _comparar(celulas[indice], valores[indice - 1], coluna):
+            if indice >= len(celulas):
+                divergencias.append({"arquivo": nome, "campo": coluna})
+                continue
+            exibido = celulas[indice].strip().upper()
+            colunas_tokens = {"input", "output", "total", "cache_read", "cache_write"}
+            if exibido == "N/A":
+                if not diligencia_local or coluna not in colunas_tokens or valores[indice - 1] is not None:
+                    divergencias.append({"arquivo": nome, "campo": coluna})
+                continue
+            if not _comparar(celulas[indice], valores[indice - 1], coluna):
                 divergencias.append({"arquivo": nome, "campo": coluna})
 
     return {
@@ -138,6 +156,8 @@ def auditar() -> dict:
         "arquivos_origem_ausentes": ausentes,
         "metricas_tokens_disponiveis": com_metricas_token,
         "tokens_e_cache_completos": completos_tokens_cache,
+        "tokens_nao_aplicaveis_diligencias_locais": diligencias_sem_modelo,
+        "execucoes_de_complementacao_sem_tokens": execucoes_modelo_sem_tokens,
         "duracoes_disponiveis": com_duracao,
         "custos_historicos_disponiveis": com_custo,
         "recomendacoes_preservadas": com_recomendacao,

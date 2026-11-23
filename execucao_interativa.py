@@ -30,10 +30,6 @@ _MENSAGEM_MANUAL = (
     "Instrucao indisponivel para revisao automatizada. "
     "Encaminhe o pedido para analise manual."
 )
-_CAMPOS_TOKENS = (
-    "input_tokens", "output_tokens", "total_tokens",
-    "cache_read_tokens", "cache_write_tokens", "reasoning_tokens",
-)
 _BLOQUEIO_TENTATIVAS = Lock()
 _TENTATIVAS_USADAS: set[str] = set()
 _BLOQUEIO_AGENTES = Lock()
@@ -126,16 +122,62 @@ def _metricas_observadas(metricas):
     if metricas is None:
         return None
     tokens = {}
-    for campo in _CAMPOS_TOKENS:
+    for campo in ("input_tokens", "output_tokens", "total_tokens"):
         valor = getattr(metricas, campo, None)
         if type(valor) is int and valor >= 0:
             tokens[campo] = valor
-    # Contadores vazios do SDK podem ter zeros como valor padrao.
-    observadas = tokens if any(tokens.values()) else {}
+
+    # Agno agrega campos de cache ausentes como zero. Só os publica quando
+    # o adaptador observou os campos correspondentes em todas as respostas.
+    detalhes = getattr(metricas, "details", None)
+    modelos = [
+        modelo
+        for grupo in (detalhes or {}).values()
+        for modelo in (grupo or ())
+    ] if isinstance(detalhes, dict) else []
+    metricas_provedor = [
+        getattr(modelo, "provider_metrics", None)
+        for modelo in modelos
+        if isinstance(getattr(modelo, "provider_metrics", None), dict)
+    ]
+    respostas = sum(
+        valor.get("openai_usage_responses", 0)
+        for valor in metricas_provedor
+        if type(valor.get("openai_usage_responses")) is int
+    )
+    observadas = {}
+    if any(tokens.values()) or respostas:
+        observadas.update(tokens)
+    if respostas and sum(
+        valor.get("openai_cache_read_reports", 0)
+        for valor in metricas_provedor
+        if type(valor.get("openai_cache_read_reports")) is int
+    ) == respostas:
+        valor = getattr(metricas, "cache_read_tokens", None)
+        if type(valor) is int and valor >= 0:
+            observadas["cache_read_tokens"] = valor
+    if respostas and sum(
+        valor.get("openai_cache_write_reports", 0)
+        for valor in metricas_provedor
+        if type(valor.get("openai_cache_write_reports")) is int
+    ) == respostas:
+        valor = getattr(metricas, "cache_write_tokens", None)
+        if type(valor) is int and valor >= 0:
+            observadas["cache_write_tokens"] = valor
+    if respostas and sum(
+        valor.get("openai_reasoning_reports", 0)
+        for valor in metricas_provedor
+        if type(valor.get("openai_reasoning_reports")) is int
+    ) == respostas:
+        valor = getattr(metricas, "reasoning_tokens", None)
+        if type(valor) is int and valor >= 0:
+            observadas["reasoning_tokens"] = valor
+
     for campo in ("cost", "duration", "time_to_first_token"):
         valor = getattr(metricas, campo, None)
         if type(valor) in (int, float) and isfinite(valor) and valor >= 0:
-            observadas[campo] = valor
+            chave = "duracao_run_agno_segundos" if campo == "duration" else campo
+            observadas[chave] = valor
     return observadas or None
 
 
@@ -220,6 +262,40 @@ def consultas_publicaveis(auditoria, matricula):
     return consultas
 
 
+def _auditoria_publicable(auditoria):
+    """Projeta chamadas verificadas sem identificadores ou conteúdo livre."""
+    chamadas = []
+    for chamada in auditoria.get("chamadas", ()):
+        if not isinstance(chamada, dict):
+            continue
+        argumentos = chamada.get("argumentos", {})
+        resultado = chamada.get("resultado", {})
+        metricas = chamada.get("metricas", {})
+        chamadas.append({
+            "nome": chamada.get("nome"),
+            "argumentos": {
+                chave: ("[IDENTIFICADOR_REDACTADO]" if chave == "matricula" else valor)
+                for chave, valor in argumentos.items()
+            } if isinstance(argumentos, dict) else {},
+            "resultado": {
+                chave: ("[IDENTIFICADOR_REDACTADO]" if chave == "matricula" else valor)
+                for chave, valor in resultado.items()
+            } if isinstance(resultado, dict) else {},
+            "erro": chamada.get("erro") is True,
+            "metricas": {
+                chave: valor for chave, valor in metricas.items()
+                if chave in ("time", "duration", "duration_seconds")
+                and type(valor) in (int, float) and isfinite(valor) and valor >= 0
+            } if isinstance(metricas, dict) else {},
+        })
+    return {
+        "total_chamadas": len(chamadas),
+        "estado_trilha": auditoria.get("estado_trilha"),
+        "estado_contexto": auditoria.get("estado_contexto"),
+        "chamadas": chamadas,
+    }
+
+
 def executar_tentativa(
     *,
     protocolo: str,
@@ -246,6 +322,7 @@ def executar_tentativa(
         "status": "analise_manual",
         "mensagem": _MENSAGEM_MANUAL,
         "metricas": None,
+        "modelo_invocado": False,
         "revisao_humana_obrigatoria": True,
     }
 
@@ -272,6 +349,7 @@ def executar_tentativa(
             _validar_dados_merito(dados)
             banco = _caminho_memoria(usar_memoria, caminho_banco)
             with _agente_da_tentativa(banco, matricula, barreira_persistente, banco_autorizado) as agente:
+                resultado["modelo_invocado"] = True
                 resposta = agente.run(
                     pedido=dados, session_id=session_id, user_id=matricula, run_id=tentativa_id,
                     retomar_complementacao=banco is not None and protocolo in CAMPOS_COMPLEMENTAVEIS,
@@ -304,12 +382,26 @@ def executar_tentativa(
             tipo_execucao="diligencia_preliminar" if preliminar else "analise_merito",
             instrucao_conferida=conferida,
             consultas=consultas_publicaveis(auditoria, matricula),
+            resultado_barreira={
+                "aprovado": barreira.get("aprovado") is True,
+                "texto_conferido": barreira.get("texto_conferido") is True,
+                "quantidade_erros": len(barreira.get("erros", ()))
+                if isinstance(barreira.get("erros"), list) else None,
+                "erros": barreira.get("erros", []),
+                "recomendacao_conferida": conferida.get("recomendacao"),
+                "criterios_verificados": conferida.get("verificacoes", []),
+                "quantidade_diarias_conferida": conferida.get("quantidade_diarias"),
+                "valor_total_conferido": conferida.get("valor_total"),
+                "exige_autorizacao_superior": conferida.get("exige_autorizacao_superior"),
+            },
         )
+        if not preliminar:
+            resultado["auditoria_ferramentas"] = _auditoria_publicable(auditoria)
         resultado.pop("mensagem")
         if not preliminar:
             resultado["run_id"] = tentativa_id
     except Exception:
         # Fronteira da interface: textos de erro e conteudo recusado ficam fora do retorno.
-        pass
+        resultado["falha_tecnica"] = True
     resultado["duracao_segundos"] = perf_counter() - inicio
     return resultado

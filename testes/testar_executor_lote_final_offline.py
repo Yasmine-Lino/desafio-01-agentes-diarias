@@ -88,9 +88,119 @@ class ExecutorLoteFinalOffline(unittest.TestCase):
         self.assertIsNone(api["output_tokens"])
         self.assertIsNone(api["total_tokens"])
         self.assertIsNone(api["custo_estimado_usd"])
+        self.assertEqual(api["custo_estimativa_metodo"], "indisponivel_sem_tokens")
         self.assertIsNone(api["custo_faturado_usd"])
-        self.assertEqual((local["input_tokens"], local["output_tokens"], local["total_tokens"]), (0, 0, 0))
-        self.assertEqual(local["custo_estimado_usd"], "0E-8")
+        self.assertEqual((local["input_tokens"], local["output_tokens"], local["total_tokens"]), (None, None, None))
+        self.assertEqual(local["metricas_tokens_status"], "nao_aplicavel")
+        self.assertIsNone(local["custo_estimado_usd"])
+
+    def test_projeta_instrucao_barreira_consultas_e_trilha_sem_dados_pessoais(self):
+        dados = {
+            "status": "conferida",
+            "modelo_invocado": True,
+            "tipo_execucao": "analise_merito",
+            "metricas": {"input_tokens": 15, "output_tokens": 4, "total_tokens": 19},
+            "duracao_segundos": 1.2,
+            "_dados_sensiveis": ["654321", "Yasmine Sintetica"],
+            "instrucao_conferida": {
+                "matricula": "654321", "recomendacao": "diligencia",
+                "verificacoes": [{"criterio": "cadastro", "situacao": "nao_atende", "detalhe": "Yasmine Sintetica deve complementar"}],
+                "fundamentos": ["A regra oficial exige conferência"],
+                "pendencias": ["Anexar documento"], "alertas": [],
+                "minuta_despacho": "Diligenciar.",
+            },
+            "consultas": [{"nome": "consultar_servidor", "argumentos": {"matricula": "654321"}, "erro": False}],
+            "auditoria_ferramentas": {
+                "estado_trilha": "completa", "estado_contexto": "completo", "total_chamadas": 4,
+                "chamadas": [{"nome": "consultar_servidor", "argumentos": {"matricula": "654321"}, "resultado": {"matricula": "654321", "encontrado": True}, "erro": False, "metricas": {}}],
+            },
+            "resultado_barreira": {
+                "aprovado": True, "texto_conferido": True, "quantidade_erros": 0, "erros": [],
+                "recomendacao_conferida": "diligencia",
+                "criterios_verificados": [{"criterio": "cadastro", "situacao": "nao_atende", "detalhe": "Yasmine Sintetica"}],
+            },
+        }
+        registro = lote._projetar_caso("DIA-2026-0101", "DIA-2026-0101", "analise", dados)
+        serializado = json.dumps(registro, ensure_ascii=False)
+        self.assertIn("diligencia", serializado)
+        self.assertIn("verificacoes", serializado)
+        self.assertIn("consultar_servidor", serializado)
+        self.assertIn("resultado_barreira", serializado)
+        self.assertIn("criterios_verificados", serializado)
+        self.assertNotIn("654321", serializado)
+        self.assertNotIn("Yasmine Sintetica", serializado)
+
+    def test_estimativa_declara_quando_cache_nao_foi_informado(self):
+        registro = lote._projetar_caso(
+            "DIA-2026-0101", "DIA-2026-0101", "analise",
+            self.resultado(metricas={"input_tokens": 1000, "output_tokens": 10, "total_tokens": 1010}),
+        )
+        self.assertIsNone(registro["cache_read_tokens"])
+        self.assertIsNone(registro["cache_write_tokens"])
+        self.assertEqual(registro["custo_estimativa_metodo"], "tarifa_de_entrada_sem_decomposicao_de_cache")
+
+    def test_estimativa_usa_somente_cache_comprovado_e_identifica_lacuna(self):
+        metricas = {"input_tokens": 1000, "output_tokens": 100,
+                    "cache_read_tokens": 100, "cache_write_tokens": None}
+        registro = lote._projetar_caso(
+            "DIA-2026-0101", "DIA-2026-0101", "analise",
+            self.resultado(metricas={**metricas, "total_tokens": 1100}),
+        )
+        self.assertEqual(registro["custo_estimativa_metodo"], "tarifa_com_decomposicao_parcial_de_cache")
+        self.assertEqual(registro["custo_estimado_usd"], "0.00030200")
+
+    def test_contadores_de_cache_sao_observados_somente_quando_o_provedor_os_enviou(self):
+        import executar_lote_final as executor
+        from execucao_interativa import _metricas_observadas
+
+        dados = SimpleNamespace(input_tokens=100, output_tokens=10, total_tokens=110,
+                                cache_read_tokens=0, cache_write_tokens=0, reasoning_tokens=3,
+                                cost=None, duration=1.25, time_to_first_token=None)
+        uso = SimpleNamespace(
+            input_tokens_details=SimpleNamespace(cached_tokens=0, cache_write_tokens=0,
+                                                 model_fields_set={"cached_tokens", "cache_write_tokens"}),
+            output_tokens_details=SimpleNamespace(reasoning_tokens=3, model_fields_set={"reasoning_tokens"}),
+        )
+        executor._anotar_disponibilidade_cache(dados, uso)
+        run = SimpleNamespace(
+            input_tokens=100, output_tokens=10, total_tokens=110,
+            cache_read_tokens=0, cache_write_tokens=0, reasoning_tokens=3,
+            cost=None, duration=1.25, time_to_first_token=None,
+            details={"model": [SimpleNamespace(provider_metrics=dados.provider_metrics)]},
+        )
+        metricas = _metricas_observadas(run)
+        self.assertEqual(metricas["cache_read_tokens"], 0)
+        self.assertEqual(metricas["cache_write_tokens"], 0)
+        self.assertEqual(metricas["reasoning_tokens"], 3)
+        self.assertEqual(metricas["duracao_run_agno_segundos"], 1.25)
+
+        sem_detalhes = SimpleNamespace(
+            input_tokens=100, output_tokens=10, total_tokens=110,
+            cache_read_tokens=0, cache_write_tokens=0, reasoning_tokens=0,
+            cost=None, duration=None, time_to_first_token=None, details={},
+        )
+        metricas_sem_cache = _metricas_observadas(sem_detalhes)
+        self.assertNotIn("cache_read_tokens", metricas_sem_cache)
+
+        zeros_sem_resposta = SimpleNamespace(
+            input_tokens=0, output_tokens=0, total_tokens=0,
+            cache_read_tokens=0, cache_write_tokens=0, reasoning_tokens=0,
+            cost=None, duration=0.4, time_to_first_token=None, details={},
+        )
+        sem_uso = _metricas_observadas(zeros_sem_resposta)
+        self.assertNotIn("input_tokens", sem_uso)
+        self.assertEqual(sem_uso["duracao_run_agno_segundos"], 0.4)
+
+        default_zero = SimpleNamespace(provider_metrics=None)
+        executor._anotar_disponibilidade_cache(
+            default_zero,
+            SimpleNamespace(
+                input_tokens_details=SimpleNamespace(cached_tokens=0, model_fields_set=set()),
+                output_tokens_details=SimpleNamespace(reasoning_tokens=0, model_fields_set=set()),
+            ),
+        )
+        self.assertEqual(default_zero.provider_metrics["openai_cache_read_reports"], 0)
+        self.assertEqual(default_zero.provider_metrics["openai_reasoning_reports"], 0)
 
     def test_consolidacao_custo_estimado_com_tarifa_declarada(self):
         custo = lote.estimar_custo({"input_tokens": 1000, "output_tokens": 100})
@@ -100,9 +210,33 @@ class ExecutorLoteFinalOffline(unittest.TestCase):
             self.resultado(metricas={"input_tokens": 1000, "output_tokens": 100, "total_tokens": 1100}),
         )]
         consolidado = lote.consolidar(registros, concluido=False, duracao_total=1.5)
-        self.assertEqual(consolidado["input_tokens"], 1000)
-        self.assertEqual(consolidado["total_tokens"], 1100)
+        self.assertIsNone(consolidado["input_tokens"])
+        self.assertEqual(consolidado["subtotal_input_tokens_casos_com_metricas"], 1000)
+        self.assertEqual(consolidado["subtotal_total_tokens_casos_com_metricas"], 1100)
+        self.assertFalse(consolidado["metricas_completas"])
         self.assertIsNone(consolidado["custo_faturado_usd"])
+
+    def test_falha_tecnica_interrompe_apos_checkpoint_sem_avancar_pedidos(self):
+        chamados = []
+
+        def pedido(protocolo):
+            chamados.append(protocolo)
+            return self.resultado(status="analise_manual", metricas=None) | {
+                "modelo_invocado": True, "falha_tecnica": True,
+            }
+
+        manifesto = lote.executar_lote(
+            pedido,
+            lambda *_: self.fail("complementacao nao deveria iniciar"),
+            diretorio_saida=self.saida,
+        )
+        self.assertEqual(manifesto["estado"], "interrompido")
+        self.assertEqual(chamados, [lote.PEDIDOS_COMUNS[0]])
+        self.assertEqual(manifesto["metricas"]["casos_registrados"], 1)
+        self.assertEqual(manifesto["metricas"]["casos_concluidos"], 0)
+        self.assertFalse(manifesto["metricas"]["metricas_completas"])
+        saved = json.loads((self.saida / "01_DIA-2026-0101.json").read_text(encoding="utf-8"))
+        self.assertTrue(saved["falha_tecnica"])
 
     def test_adaptador_complemento_retomada_na_sessao_e_titular_corrigidos(self):
         class BarreiraFalsa:

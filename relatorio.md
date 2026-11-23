@@ -289,7 +289,7 @@ das 34 fontes registra custo histórico. A duração de
 `duracao_segundos_executor`; `duracao_segundos_persistida`
 e `metricas.duration` registram 11,895886 s. O relatório
 da auditoria está em
-`resultados/auditoria_entrega_final_20261122.json`.
+`resultados/auditoria_complementar_final_20261122.json`.
 
 Os registros detalhados das rodadas anteriores incluem recomendações,
 verificações, chamadas de ferramentas e resultados da barreira,
@@ -317,3 +317,43 @@ faturado não foi consultado.
 
 Os resultados históricos e as execuções interrompidas
 permanecem preservados separadamente, sem sobrescrita.
+
+## Tentativas detalhadas interrompidas
+
+Em 22/11/2026, a tentativa em `resultados/lote_final_14_20261122T233552Z/`
+foi interrompida durante a complementação de 0111. Foram gravados 12
+checkpoints: 11 registros em análise manual após falhas de conexão e uma
+diligência local de 0111 conferida. Nenhuma análise de mérito do modelo foi
+conferida; 0112 não foi iniciado. O terminal mostrou 11 falhas de conexão,
+sem status HTTP. O manifesto inicial refletiu valores padrão do Agno como
+zeros e contou checkpoints como conclusão; isso não comprova uso zero nem
+faturamento zero. Os artefatos originais foram preservados. A leitura
+sanitizada está em `resultados/auditoria_lote_final_14_20261122T233552Z.json`.
+
+Após a correção e aprovação offline do executor, foi autorizada uma única nova
+tentativa detalhada em `resultados/lote_final_14_20261122T235749Z/`. Ela
+interrompeu no primeiro caso: um registro, zero casos conferidos e uma chamada
+lógica ao modelo. O transporte reportou erro de conexão, sem resposta HTTP.
+Entrada, saída, total e cache são nulos; o custo estimado e o faturado também
+permanecem nulos. A duração do caso foi 0,279339 s, a duração do run Agno
+0,275112 s e a duração total do lote 2,856785 s; a diferença de 2,577446 s é
+aritmética e não uma medição independente de orquestração. Sem resposta do
+provedor, uma eventual cobrança não pode ser confirmada. Não houve retry. O
+resumo sanitizado está em
+`resultados/auditoria_lote_final_14_20261122T235749Z.json`.
+
+O executor agora para após a primeira falha técnica, separa registros de casos
+conferidos, não classifica zeros sem resposta de uso como tokens observados e
+preserva a instrução conferida, verificações, consultas permitidas, trilha
+segura de ferramentas e resultado estruturado da barreira. Os testes offline
+validam essa projeção, inclusive privacidade e checkpoint. A persistência
+detalhada está implementada, mas uma execução real completa com essas trilhas
+não foi demonstrada devido às falhas de conexão. Nenhuma saída histórica foi
+associada às novas tentativas.
+
+Para estimativas futuras, o executor declara as tarifas da página oficial do
+modelo consultada em 22/11/2026: entrada US$ 0,20, entrada em cache US$ 0,02,
+escrita de cache US$ 0,25 e saída US$ 1,20 por milhão de tokens
+([OpenAI GPT-5.6 Luna](https://developers.openai.com/api/docs/models/gpt-5.6-luna)).
+Quando a decomposição de cache não é informada, o método e essa limitação são
+registrados; custo faturado continua não verificado.

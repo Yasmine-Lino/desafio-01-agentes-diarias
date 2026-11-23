@@ -1,0 +1,76 @@
+{
+  "linhas_tabela": 34,
+  "arquivos_origem_encontrados": 34,
+  "campos_por_linha": [
+    "duration",
+    "input",
+    "output",
+    "total",
+    "cache_read",
+    "cache_write",
+    "tools",
+    "barrier",
+    "recommendation"
+  ],
+  "divergencias": [],
+  "arquivos_origem_ausentes": [],
+  "metricas_tokens_disponiveis": 25,
+  "tokens_e_cache_completos": 25,
+  "tokens_nao_aplicaveis_diligencias_locais": 5,
+  "execucoes_de_complementacao_sem_tokens": [
+    "DIA-2026-0111_complementado.json",
+    "DIA-2026-0111_complementado_v2.json",
+    "DIA-2026-0112_complementado.json",
+    "DIA-2026-0112_complementado_rodada3.json"
+  ],
+  "duracoes_disponiveis": 29,
+  "custos_historicos_disponiveis": 0,
+  "recomendacoes_preservadas": 34,
+  "trilhas_de_ferramentas_na_origem": 29,
+  "duracao_com_campo_executor": [
+    "DIA-2026-0111_complementado_rodada3_recuperado.json"
+  ],
+  "status": "conferido",
+  "lote_final": {
+    "arquivos_de_caso": 14,
+    "status_conferida": 14,
+    "revisao_humana_obrigatoria": 14,
+    "chamadas_logicas_modelo": 12,
+    "diligencias_locais_sem_modelo": 2,
+    "complementacoes_corrigidas": 2,
+    "barreiras_aprovadas": 14,
+    "soma_tokens_por_caso": {
+      "input_tokens": 140102,
+      "output_tokens": 7151,
+      "total_tokens": 147253
+    },
+    "tokens_manifesto": {
+      "input_tokens": 140102,
+      "output_tokens": 7151,
+      "total_tokens": 147253
+    },
+    "soma_duracao_registros_segundos": 112.882795,
+    "duracao_total_manifesto_segundos": 121.465325,
+    "diferenca_nao_atribuida_por_registro_segundos": 8.58253,
+    "soma_custo_estimado_usd": "0.01246789",
+    "custo_estimado_manifesto_usd": "0.01246789",
+    "custo_faturado": null,
+    "linhas_com_contadores_cache": 0,
+    "linhas_com_recomendacao": 0,
+    "linhas_com_trilha_ferramentas": 0,
+    "linhas_com_detalhes_barreira": 0,
+    "checks": {
+      "14_registros": true,
+      "manifesto_14_de_14": true,
+      "status_conferida": true,
+      "barreira_aprovada": true,
+      "revisao_humana_obrigatoria": true,
+      "12_chamadas_modelo": true,
+      "2_diligencias_locais": true,
+      "tokens_manifesto": true,
+      "custo_soma_manifesto": true,
+      "complementacoes_mesma_sessao_e_titular": true
+    },
+    "status": "conferido"
+  }
+}
